@@ -8,13 +8,11 @@ const HeaderContainer = styled.header`
     align-items: center;
     display: flex;
     justify-content: space-between;
-    padding: 48px 120px;
+    padding: 48px 5%;
     position: absolute;
     top: 0;
-
-    @media screen and (width <= 430px) {
-        padding: 48px 32px;
-    }
+    left: 50%;
+    transform: translateX(-50%);
 
     @media screen and (width <= 320px) {
         padding: 16px;
@@ -25,7 +23,7 @@ const HeaderMenuButton = styled.button`
     all: unset;
     display: none;
 
-    @media screen and (width <= 430px) {
+    @media screen and (width <= 500px) {
         display: block;
     }
 `;
@@ -41,8 +39,9 @@ const HeaderLogoSpan = styled.span`
     font-size: 24px;
     max-width: fit-content;
     cursor: pointer;
+    margin: 0;
 
-    @media screen and (width <= 430px) {
+    @media screen and (width <= 500px) {
         display: none;
     }
 `;
@@ -51,8 +50,9 @@ const HeaderList = styled.ul`
     display: flex;
     gap: 24px;
     max-width: fit-content;
+    margin: 0;
 
-    @media screen and (width <= 430px) {
+    @media screen and (width <= 500px) {
         display: none;
     }
 `;
@@ -72,6 +72,15 @@ const HeaderListItem = styled.li`
 
 export const Header = () => {
     const logoRef = useRef(null);
+
+    // gsap.fromTo(logoRef.current, {
+    //     opacity: 0,
+    //     x: 1920,   
+    // }, {
+    //     opacity: 1,
+    //     x: 0,
+    //     duration: 1
+    // });
 
     return (
         <HeaderContainer>

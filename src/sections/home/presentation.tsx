@@ -17,7 +17,7 @@ const MainContent = styled.main`
     position: relative;
     width: 100%;
 
-    @media screen and (width <= 430px) {
+    @media screen and (width <= 500px) {
         align-items: center;
     }
 `;
@@ -37,8 +37,9 @@ const PresentationContainer = styled.div`
     width: fit-content;
     max-width: 350px;
     margin-left: 230px;
+    margin-left: 10%;
 
-    @media screen and (width <= 430px) {
+    @media screen and (width <= 500px) {
         margin: 0;
         max-width: 300px;
     }

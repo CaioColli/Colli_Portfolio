@@ -82,7 +82,7 @@ const PresentationTitle = styled.h1<PresentationTitleProps>`
     color: ${(props) => (props.$primary ? "var(--orange)" : "var(--white)")};
     font-size: 48px;
 
-    @media screen and (width <= 430px) {
+    @media screen and (width <= 500px) {
         font-size: 40px;
     }
 `;

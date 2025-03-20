@@ -1,14 +1,13 @@
 import { LuMenu } from "react-icons/lu";
 import styled from "styled-components";
 import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const HeaderContainer = styled.header`
     align-items: center;
     display: flex;
     justify-content: space-between;
-    padding: 48px 5%;
+    padding: 48px 10%;
     position: absolute;
     top: 0;
     left: 50%;
@@ -66,21 +65,41 @@ const HeaderListItem = styled.li`
     transition: 0.2s ease-in-out;
 
     &:hover {
-        color: var(--white);
+        transform: translateY(-4px) !important;
     }
 `;
 
 export const Header = () => {
-    const logoRef = useRef(null);
+    const logoRef = useRef<HTMLElement>(null);
+    const listRef = useRef<HTMLUListElement>(null);
+    
+    useEffect(() => {
+        if (logoRef.current && listRef.current) {
+            const tl = gsap.timeline();
+            
+            gsap.fromTo(logoRef.current, {
+                opacity: 0,
+                x: -100,
+            }, {
+                opacity: 1,
+                x: 0,
+                duration: 2,
+                ease: "back.out(1.5)"
+            })
 
-    // gsap.fromTo(logoRef.current, {
-    //     opacity: 0,
-    //     x: 1920,   
-    // }, {
-    //     opacity: 1,
-    //     x: 0,
-    //     duration: 1
-    // });
+            tl.fromTo(listRef.current.children, {
+                opacity: 0,
+                y: -100,
+            }, {
+                opacity: 1,
+                y: 0,
+                delay: 0.5,
+                stagger: 0.2,
+            });
+        }
+    }, []);
+
+    const headerOptions = ['Home', 'Sobre mim', 'Projetos', 'Contato'];
 
     return (
         <HeaderContainer>
@@ -92,11 +111,12 @@ export const Header = () => {
                 Colli
             </HeaderLogoSpan>
 
-            <HeaderList>
-                <HeaderListItem>Home</HeaderListItem>
-                <HeaderListItem>Sobre mim</HeaderListItem>
-                <HeaderListItem>Projetos</HeaderListItem>
-                <HeaderListItem>Contato</HeaderListItem>
+            <HeaderList ref={listRef}>
+                {headerOptions.map((item, index) => (
+                    <HeaderListItem key={index}>
+                        {item}
+                    </HeaderListItem>
+                ))}
             </HeaderList>
         </HeaderContainer>
     )

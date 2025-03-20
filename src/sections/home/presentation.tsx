@@ -1,12 +1,25 @@
 import styled from "styled-components";
-import { LuMenu } from "react-icons/lu";
-import { useState } from "react";
+
+import { GiBrain } from "react-icons/gi";
+import { IoIosLink } from "react-icons/io";
+import { IoMailOpenOutline } from "react-icons/io5";
+
+import { PrimaryButtonComponent } from "../../components/primaryButton";
+import { Header } from "./header";
+import { SecondaryButton } from "../../components/secondaryButton";
 
 const MainContent = styled.main`
-    width: 100%;
+    display: flex;
+    flex-direction: column;
     height: 100%;
+    justify-content: center;
     max-height: 1080px;
     position: relative;
+    width: 100%;
+
+    @media screen and (width <= 430px) {
+        align-items: center;
+    }
 `;
 
 const BackgroundVideo = styled.video`
@@ -17,68 +30,97 @@ const BackgroundVideo = styled.video`
     z-index: -1;
 `;
 
-const Header = styled.header`
+const PresentationContainer = styled.div`
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 16px;
+    width: fit-content;
+    max-width: 350px;
+    margin-left: 230px;
+
+    @media screen and (width <= 430px) {
+        margin: 0;
+        max-width: 300px;
+    }
+`;
+
+const PresentationCard = styled.div`
     align-items: center;
-    padding: 48px 120px;
-
-    @media screen and (width <= 430px) {
-        padding: 48px 32px;
-    }
-`;
-
-const HeaderMenuButton = styled.button`
-    all: unset;
-    display: none;
-
-    @media screen and (width <= 430px) {
-        display: block;
-    }
-`;
-
-const HeaderMenuIcon = styled(LuMenu)`
-    font-size: 40px;
-    color: var(--orange);
+    border-radius: 8px;
+    border: 2px solid var(--orange);
+    display: flex;
+    gap: 8px;
+    margin: 0;
+    padding: 8px 16px;
     width: fit-content;
 `;
 
-const HeaderLogoSpan = styled.span`
+const PresentationCardIcon = styled(GiBrain)`
+    font-size: 18px;
     color: var(--orange);
-    font-size: 24px;
-    max-width: fit-content;
-    cursor: pointer;
+    width: 18px;
+    transition: 0.2s ease-in-out;
+`
 
-    @media screen and (width <= 430px) {
-        display: none;
-    }
+const PresentationCardTitle = styled.span`
+    color: var(--orange);
+    width: fit-content;
+    transition: 0.2s ease-in-out;
 `;
 
-const HeaderList = styled.ul`
+interface PresentationTitleProps {
+    primary?: boolean;
+}
+
+const PresentationTitleContainer = styled.div`
     display: flex;
-    gap: 24px;
-    max-width: fit-content;
+    flex-direction: column;
+`;
+
+const PresentationTitle = styled.h1<PresentationTitleProps>`
+    color: ${(props) => (props.primary ? "var(--orange)" : "var(--white)")};
+    font-size: 48px;
 
     @media screen and (width <= 430px) {
-        display: none;
+        font-size: 40px;
     }
 `;
 
-const HeaderListItem = styled.li`
-    all: unset;
-    color: var(--orange);
+const PresentationDescription = styled.p`
+    color: var(--white);
     font-size: 16px;
-    cursor: pointer;
+`;
+
+const PresentationCardsList = styled.ul`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+`
+
+const PresentationCardItem = styled.li`
+    all: unset;
+    cursor: default;
+    color: var(--white);
     position: relative;
+    padding: 8px 16px;
+    background-color: var(--ligthGray);
+    border-radius: 8px;
     transition: 0.2s ease-in-out;
 
     &:hover {
-        color: var(--white);
+        transform: translateY(-4px);
     }
 `;
 
-export const Presentation = () => {
+const PresentationButtonsContainer = styled.div`
+    display: flex;
+    gap: 16px;
+`;
 
+export const Presentation = () => {
+    const technologies = [
+        'React', 'JavaScript', 'Typescript', 'PHP', 'Node.js', 'Figma'
+    ]
 
     return (
         <MainContent>
@@ -86,22 +128,48 @@ export const Presentation = () => {
                 <source src="./src/assets/videos/backgroundVideo.mp4" />
             </BackgroundVideo>
 
-            <Header>
-                <HeaderMenuButton>
-                    <HeaderMenuIcon />
-                </HeaderMenuButton>
+            <Header />
 
-                <HeaderLogoSpan>
-                    Colli
-                </HeaderLogoSpan>
+            <PresentationContainer>
+                <PresentationCard>
+                    <PresentationCardIcon />
+                    <PresentationCardTitle>
+                        Pronto para inovar!
+                    </PresentationCardTitle>
+                </PresentationCard>
 
-                <HeaderList>
-                    <HeaderListItem>Home</HeaderListItem>
-                    <HeaderListItem>Sobre mim</HeaderListItem>
-                    <HeaderListItem>Projetos</HeaderListItem>
-                    <HeaderListItem>Contato</HeaderListItem>
-                </HeaderList>
-            </Header>
+                <PresentationTitleContainer>
+                    <PresentationTitle primary>
+                        DESENVOLVEDOR
+                    </PresentationTitle>
+
+                    <PresentationTitle>
+                        FULL STACK
+                    </PresentationTitle>
+                </PresentationTitleContainer>
+
+                <PresentationDescription>
+                    Criando websites inovadores, funcionais e fáceis de usar para soluções digitais.
+                </PresentationDescription>
+
+                <PresentationCardsList>
+                    {technologies.map((technology) => (
+                        <PresentationCardItem>
+                            {technology}
+                        </PresentationCardItem>
+                    ))}
+                </PresentationCardsList>
+
+                <PresentationButtonsContainer>
+                    <PrimaryButtonComponent text="Projetos">
+                        <IoIosLink />
+                    </PrimaryButtonComponent>
+
+                    <SecondaryButton text="Contato">
+                        <IoMailOpenOutline />
+                    </SecondaryButton>
+                </PresentationButtonsContainer>
+            </PresentationContainer>
 
         </MainContent>
     )

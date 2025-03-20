@@ -7,6 +7,8 @@ import { IoMailOpenOutline } from "react-icons/io5";
 import { Header } from "./header";
 import { PrimaryButtonComponent } from "../../components/primaryButton";
 import { SecondaryButtonComponent } from "../../components/secondaryButton";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 const MainContent = styled.main`
     display: flex;
@@ -109,7 +111,7 @@ const PresentationCardItem = styled.li`
     transition: 0.2s ease-in-out;
 
     &:hover {
-        transform: translateY(-4px);
+        transform: translateY(-4px) !important;
     }
 `;
 
@@ -119,6 +121,60 @@ const PresentationButtonsContainer = styled.div`
 `;
 
 export const Presentation = () => {
+    const presentationCardRef = useRef<HTMLDivElement>(null);
+    const presentationTltlesRef = useRef<HTMLDivElement>(null);
+    const presentationDescriptionRef = useRef<HTMLParagraphElement>(null);
+    const presentationCardsRef = useRef<HTMLUListElement>(null);
+    const presentationButtonsRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (
+            presentationCardRef.current &&
+            presentationTltlesRef.current &&
+            presentationDescriptionRef.current &&
+            presentationCardsRef.current &&
+            presentationButtonsRef.current
+        ) {
+            const tl = gsap.timeline({ duration: 1 });
+
+            gsap.set([
+                presentationCardRef.current,
+                presentationTltlesRef.current,
+                presentationDescriptionRef.current,
+                presentationCardsRef.current
+            ], { opacity: 0, y: 100 });
+
+            gsap.set(Array.from(presentationButtonsRef.current.children), { opacity: 0, y: 100 });
+
+            tl.to(presentationCardRef.current, {
+                opacity: 1,
+                y: 0,
+                ease: "back.out(4)",
+            })
+            .to(presentationTltlesRef.current, {
+                opacity: 1,
+                y: 0,
+                ease: "back.out(2)",
+            })
+            .to(presentationDescriptionRef.current, {
+                opacity: 1,
+                y: 0,
+                ease: "back.out(2)",
+            })
+            .to(presentationCardsRef.current, {
+                opacity: 1,
+                y: 0,
+                ease: "back.out(2)",
+            })
+            .to(presentationButtonsRef.current.children, {
+                opacity: 1,
+                y: 0,
+                stagger: 0.5,
+                ease: "back.out(2)",
+            }, "-=0.5");
+        }
+    }, [])
+
     const technologies = [
         'React', 'JavaScript', 'Typescript', 'PHP', 'Node.js', 'Figma'
     ]
@@ -132,14 +188,14 @@ export const Presentation = () => {
             <Header />
 
             <PresentationContainer>
-                <PresentationCard>
+                <PresentationCard ref={presentationCardRef}>
                     <PresentationCardIcon />
                     <PresentationCardTitle>
                         Pronto para inovar!
                     </PresentationCardTitle>
                 </PresentationCard>
 
-                <PresentationTitleContainer>
+                <PresentationTitleContainer ref={presentationTltlesRef}>
                     <PresentationTitle $primary>
                         DESENVOLVEDOR
                     </PresentationTitle>
@@ -149,11 +205,11 @@ export const Presentation = () => {
                     </PresentationTitle>
                 </PresentationTitleContainer>
 
-                <PresentationDescription>
+                <PresentationDescription ref={presentationDescriptionRef}>
                     Criando websites inovadores, funcionais e fáceis de usar para soluções digitais.
                 </PresentationDescription>
 
-                <PresentationCardsList>
+                <PresentationCardsList ref={presentationCardsRef}>
                     {technologies.map((technology, index) => (
                         <PresentationCardItem key={index}>
                             {technology}
@@ -161,7 +217,7 @@ export const Presentation = () => {
                     ))}
                 </PresentationCardsList>
 
-                <PresentationButtonsContainer>
+                <PresentationButtonsContainer ref={presentationButtonsRef}>
                     <PrimaryButtonComponent text="Projetos">
                         <IoIosLink />
                     </PrimaryButtonComponent>

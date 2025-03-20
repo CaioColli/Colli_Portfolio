@@ -75,8 +75,6 @@ export const Header = () => {
     
     useEffect(() => {
         if (logoRef.current && listRef.current) {
-            const tl = gsap.timeline();
-            
             gsap.fromTo(logoRef.current, {
                 opacity: 0,
                 x: -100,
@@ -87,13 +85,13 @@ export const Header = () => {
                 ease: "back.out(1.5)"
             })
 
-            tl.fromTo(listRef.current.children, {
+            gsap.fromTo(listRef.current.children, {
                 opacity: 0,
                 y: -100,
             }, {
                 opacity: 1,
                 y: 0,
-                delay: 0.5,
+                delay: 0.2,
                 stagger: 0.2,
             });
         }

@@ -16,7 +16,7 @@ const Button = styled.button<ButtonStyleProps>`
     color: var(--orange);
 
     &:hover {
-        transform: translateY(-4px);
+        transform: translateY(-4px) !important;
     }
 `;
 

@@ -4,9 +4,9 @@ import { GiBrain } from "react-icons/gi";
 import { IoIosLink } from "react-icons/io";
 import { IoMailOpenOutline } from "react-icons/io5";
 
-import { PrimaryButtonComponent } from "../../components/primaryButton";
 import { Header } from "./header";
-import { SecondaryButton } from "../../components/secondaryButton";
+import { PrimaryButtonComponent } from "../../components/primaryButton";
+import { SecondaryButtonComponent } from "../../components/secondaryButton";
 
 const MainContent = styled.main`
     display: flex;
@@ -69,7 +69,7 @@ const PresentationCardTitle = styled.span`
 `;
 
 interface PresentationTitleProps {
-    primary?: boolean;
+    $primary?: boolean;
 }
 
 const PresentationTitleContainer = styled.div`
@@ -78,7 +78,7 @@ const PresentationTitleContainer = styled.div`
 `;
 
 const PresentationTitle = styled.h1<PresentationTitleProps>`
-    color: ${(props) => (props.primary ? "var(--orange)" : "var(--white)")};
+    color: ${(props) => (props.$primary ? "var(--orange)" : "var(--white)")};
     font-size: 48px;
 
     @media screen and (width <= 430px) {
@@ -139,7 +139,7 @@ export const Presentation = () => {
                 </PresentationCard>
 
                 <PresentationTitleContainer>
-                    <PresentationTitle primary>
+                    <PresentationTitle $primary>
                         DESENVOLVEDOR
                     </PresentationTitle>
 
@@ -153,8 +153,8 @@ export const Presentation = () => {
                 </PresentationDescription>
 
                 <PresentationCardsList>
-                    {technologies.map((technology) => (
-                        <PresentationCardItem>
+                    {technologies.map((technology, index) => (
+                        <PresentationCardItem key={index}>
                             {technology}
                         </PresentationCardItem>
                     ))}
@@ -165,9 +165,9 @@ export const Presentation = () => {
                         <IoIosLink />
                     </PrimaryButtonComponent>
 
-                    <SecondaryButton text="Contato">
+                    <SecondaryButtonComponent text="Contato">
                         <IoMailOpenOutline />
-                    </SecondaryButton>
+                    </SecondaryButtonComponent>
                 </PresentationButtonsContainer>
             </PresentationContainer>
 

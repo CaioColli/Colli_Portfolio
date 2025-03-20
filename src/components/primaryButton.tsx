@@ -11,7 +11,7 @@ const Button = styled.button<ButtonStyleProps>`
     gap: 8px;
     border-radius: 8px;
     background-color: var(--orange);
-    padding: ${(props) => (props.largePadding ? '16px 24px' : '8px 16px')};
+    padding: ${(props) => (props.$largePadding ? '16px 24px' : '8px 16px')};
     transition: 0.2s ease-in-out;
     color: var(--white);
     
@@ -22,7 +22,7 @@ const Button = styled.button<ButtonStyleProps>`
 
 export const PrimaryButtonComponent = ({ children, text, largePadding = false }: ButtonComponentProps) => {
     return (
-        <Button largePadding={largePadding}>
+        <Button $largePadding={largePadding}>
             <ButtonIcon>
                 {children}
             </ButtonIcon>

@@ -1,5 +1,8 @@
 import { LuMenu } from "react-icons/lu";
 import styled from "styled-components";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
 
 const HeaderContainer = styled.header`
     align-items: center;
@@ -68,13 +71,15 @@ const HeaderListItem = styled.li`
 `;
 
 export const Header = () => {
+    const logoRef = useRef(null);
+
     return (
         <HeaderContainer>
             <HeaderMenuButton>
                 <HeaderMenuIcon />
             </HeaderMenuButton>
 
-            <HeaderLogoSpan>
+            <HeaderLogoSpan ref={logoRef}>
                 Colli
             </HeaderLogoSpan>
 

@@ -1,5 +1,5 @@
 export interface ButtonStyleProps {
-    largePadding?: boolean
+    $largePadding?: boolean
 };
 
 export interface ButtonComponentProps {

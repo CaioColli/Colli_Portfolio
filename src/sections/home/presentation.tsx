@@ -165,7 +165,7 @@ export const Presentation = () => {
                 opacity: 1,
                 y: 0,
                 ease: "back.out(2)",
-            })
+            }, "-=0.5")
             .to(presentationButtonsRef.current.children, {
                 opacity: 1,
                 y: 0,

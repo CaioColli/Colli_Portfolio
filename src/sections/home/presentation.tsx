@@ -13,7 +13,7 @@ import gsap from "gsap";
 const MainContent = styled.main`
     display: flex;
     flex-direction: column;
-    height: 100%;
+    min-height: 100%;
     justify-content: center;
     max-height: 1080px;
     position: relative;
@@ -135,41 +135,44 @@ export const Presentation = () => {
             presentationCardsRef.current &&
             presentationButtonsRef.current
         ) {
-            const tl = gsap.timeline({ duration: 1 });
+            const tl = gsap.timeline({ duration: 0.5 });
 
             gsap.set([
                 presentationCardRef.current,
                 presentationTltlesRef.current,
                 presentationDescriptionRef.current,
-                presentationCardsRef.current
-            ], { opacity: 0, y: 100 });
-
-            gsap.set(Array.from(presentationButtonsRef.current.children), { opacity: 0, y: 100 });
+                presentationCardsRef.current,
+                presentationButtonsRef.current
+            ], { opacity: 0, y: 50 });
 
             tl.to(presentationCardRef.current, {
                 opacity: 1,
                 y: 0,
+                duration: 1,
                 ease: "back.out(4)",
             })
             .to(presentationTltlesRef.current, {
                 opacity: 1,
                 y: 0,
+                duration: 1,
                 ease: "back.out(2)",
-            })
+            }, "-=0.5")
             .to(presentationDescriptionRef.current, {
                 opacity: 1,
                 y: 0,
+                duration: 1,
                 ease: "back.out(2)",
-            })
+            }, "-=0.5")
             .to(presentationCardsRef.current, {
                 opacity: 1,
                 y: 0,
+                duration: 1,
                 ease: "back.out(2)",
             }, "-=0.5")
-            .to(presentationButtonsRef.current.children, {
+            .to(presentationButtonsRef.current, {
                 opacity: 1,
                 y: 0,
-                stagger: 0.5,
+                duration: 1,
                 ease: "back.out(2)",
             }, "-=0.5");
         }

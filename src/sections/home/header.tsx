@@ -13,6 +13,12 @@ const HeaderContainer = styled.header`
     left: 50%;
     transform: translateX(-50%);
 
+    @media screen and (width <= 900px) and (width >= 500px) {
+        position: relative;
+        left: 0;
+        transform: translateX(0);
+    }
+
     @media screen and (width <= 320px) {
         padding: 16px;
     }
@@ -75,7 +81,10 @@ export const Header = () => {
     
     useEffect(() => {
         if (logoRef.current && listRef.current) {
-            gsap.fromTo(logoRef.current, {
+            
+            const tl = gsap.timeline();
+
+            tl.fromTo(logoRef.current, {
                 opacity: 0,
                 x: -100,
             }, {
@@ -83,17 +92,15 @@ export const Header = () => {
                 x: 0,
                 duration: 2,
                 ease: "back.out(1.5)"
-            })
-
-            gsap.fromTo(listRef.current.children, {
+            }).fromTo(listRef.current, {
                 opacity: 0,
-                y: -100,
+                x: 100,
             }, {
                 opacity: 1,
-                y: 0,
-                delay: 0.2,
-                stagger: 0.2,
-            });
+                x: 0,
+                duration: 4,
+                ease: "back.out(1.5)"
+            }, '-=2');
         }
     }, []);
 

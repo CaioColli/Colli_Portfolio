@@ -1,12 +1,19 @@
 import styled from "styled-components";
+
 import { GiStarsStack } from "react-icons/gi";
 import { RiMedalLine } from "react-icons/ri";
 import { TfiWorld } from "react-icons/tfi";
-import { PrimaryButtonComponent } from "../../components/primaryButton";
-import { SecondaryButtonComponent } from "../../components/secondaryButton";
-
 import { BsEnvelopePaper } from "react-icons/bs";
 import { IoCodeOutline } from "react-icons/io5";
+
+import { PrimaryButtonComponent } from "../../components/primaryButton";
+import { SecondaryButtonComponent } from "../../components/secondaryButton";
+import { useEffect, useRef } from "react";
+
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const AbautContainer = styled.section`
     display: flex;
@@ -189,12 +196,62 @@ const AbautCardSubTitle = styled.span`
 `;
 
 export const AbautMe = () => {
+    const AbautContainerRef = useRef<HTMLElement>(null);
+    const AbautDescriptionRef = useRef<HTMLDivElement>(null);
+    const DescriptionRef = useRef<HTMLDivElement>(null);
+    const AbautCardsRef = useRef<HTMLUListElement>(null);
+
     const handleClickCv = () => {
         const link = document.createElement('a');
         link.href = '/assets/files/cv.pdf';
         link.download = 'Curriculo_Caio_Colli_Dev.pdf';
         link.click();
     }
+
+    useEffect(() => {
+        if (
+            AbautContainerRef.current,
+            AbautDescriptionRef.current,
+            DescriptionRef.current,
+            AbautCardsRef.current
+        ) {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: AbautContainerRef.current,
+                    markers: false,
+                    start: "top center",
+                    end: "top",
+                    scrub: 2
+                }
+            });
+
+            gsap.set([
+                AbautDescriptionRef.current,
+                DescriptionRef.current,
+                AbautCardsRef.current
+            ], {
+                opacity: 0,
+                y: 100
+            })
+
+            tl.to(AbautDescriptionRef.current, {
+                opacity: 1,
+                y: 0,
+                duration: 1
+            })
+            .to(DescriptionRef.current, {
+                opacity: 1,
+                y: 0,
+                duration: 1.5
+            }, "-=0.5")
+            .to(AbautCardsRef.current, {
+                opacity: 1,
+                y: 0,
+                duration: 1
+            });
+        }
+
+    }, [])
 
     const cards = [
         {
@@ -218,8 +275,8 @@ export const AbautMe = () => {
     ]
 
     return (
-        <AbautContainer>
-            <AbautDescriptionContainer>
+        <AbautContainer ref={AbautContainerRef}>
+            <AbautDescriptionContainer ref={AbautDescriptionRef}>
                 <AbautDescriptionTitle>Sobre mim</AbautDescriptionTitle>
 
                 <AbautDescriptionSpanContainer>
@@ -231,7 +288,7 @@ export const AbautMe = () => {
                 </AbautDescriptionSpanContainer>
             </AbautDescriptionContainer>
 
-            <DescriptionContainer>
+            <DescriptionContainer ref={DescriptionRef}>
                 <DescriptionContent>
                     <DescriptionTitleContainer>
 
@@ -263,7 +320,7 @@ export const AbautMe = () => {
                 <DescriptionImageContent />
             </DescriptionContainer>
 
-            <AbautCardsList>
+            <AbautCardsList ref={AbautCardsRef}>
                 {cards.map((card, index) => (
                     <AbautCardItem key={index}>
                         <AbautCardHeader>

@@ -7,7 +7,9 @@ import { IoMailOpenOutline } from "react-icons/io5";
 import { Header } from "./header";
 import { PrimaryButtonComponent } from "../../components/primaryButton";
 import { SecondaryButtonComponent } from "../../components/secondaryButton";
+
 import { useEffect, useRef } from "react";
+
 import gsap from "gsap";
 
 const MainContent = styled.main`
@@ -77,6 +79,7 @@ const PresentationTitleContainer = styled.div`
 interface PresentationTitleProps {
     $primary?: boolean;
 }
+
 const PresentationTitle = styled.h1<PresentationTitleProps>`
     color: ${(props) => (props.$primary ? "var(--orange)" : "var(--white)")};
     font-size: 48px;

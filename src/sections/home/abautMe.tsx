@@ -8,6 +8,7 @@ import { IoCodeOutline } from "react-icons/io5";
 
 import { PrimaryButtonComponent } from "../../components/primaryButton";
 import { SecondaryButtonComponent } from "../../components/secondaryButton";
+
 import { useEffect, useRef } from "react";
 
 import gsap from "gsap";
@@ -16,10 +17,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const AbautContainer = styled.section`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 48px;
     min-height: 100%;
     padding: 96px 0;
     width: 70%;
@@ -29,6 +26,13 @@ const AbautContainer = styled.section`
         padding: 96px 24px;
     }
 `;
+
+const AbautContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+`
 
 const AbautDescriptionContainer = styled.div`
     display: flex;
@@ -196,8 +200,9 @@ const AbautCardSubTitle = styled.span`
 `;
 
 export const AbautMe = () => {
-    const AbautContainerRef = useRef<HTMLElement>(null);
+    const AbautContentRef = useRef<HTMLDivElement>(null);
     const AbautDescriptionRef = useRef<HTMLDivElement>(null);
+    const DescriptionImageRef = useRef<HTMLDivElement>(null);
     const DescriptionRef = useRef<HTMLDivElement>(null);
     const AbautCardsRef = useRef<HTMLUListElement>(null);
 
@@ -210,14 +215,15 @@ export const AbautMe = () => {
 
     useEffect(() => {
         if (
-            AbautContainerRef.current,
+            AbautContentRef.current,
             AbautDescriptionRef.current,
+            DescriptionImageRef.current,
             DescriptionRef.current,
             AbautCardsRef.current
         ) {
             const tl = gsap.timeline({
                 scrollTrigger: {
-                    trigger: AbautContainerRef.current,
+                    trigger: AbautContentRef.current,
                     markers: false,
                     start: "top center",
                     end: "top",
@@ -231,24 +237,25 @@ export const AbautMe = () => {
                 AbautCardsRef.current
             ], {
                 opacity: 0,
+                scale: 0.8,
                 y: 100
             })
 
             tl.to(AbautDescriptionRef.current, {
                 opacity: 1,
-                y: 0,
-                duration: 1
+                scale: 1,
+                y: 0
             })
-            .to(DescriptionRef.current, {
-                opacity: 1,
-                y: 0,
-                duration: 1.5
-            }, "-=0.5")
-            .to(AbautCardsRef.current, {
-                opacity: 1,
-                y: 0,
-                duration: 1
-            });
+                .to(DescriptionRef.current, {
+                    opacity: 1,
+                    scale: 1,
+                    y: 0
+                }, "-=0.3")
+                .to(AbautCardsRef.current, {
+                    opacity: 1,
+                    scale: 1,
+                    y: 0
+                }, "-=0.3");
         }
 
     }, [])
@@ -275,74 +282,76 @@ export const AbautMe = () => {
     ]
 
     return (
-        <AbautContainer ref={AbautContainerRef}>
-            <AbautDescriptionContainer ref={AbautDescriptionRef}>
-                <AbautDescriptionTitle>Sobre mim</AbautDescriptionTitle>
+        <AbautContainer>
+            <AbautContent ref={AbautContentRef}>
+                <AbautDescriptionContainer ref={AbautDescriptionRef}>
+                    <AbautDescriptionTitle>Sobre mim</AbautDescriptionTitle>
 
-                <AbautDescriptionSpanContainer>
-                    <GiStarsStack />
-                    <AbautDescriptionSpan>
-                        Transformando ideias em uma experiencia digital
-                    </AbautDescriptionSpan>
-                    <GiStarsStack />
-                </AbautDescriptionSpanContainer>
-            </AbautDescriptionContainer>
+                    <AbautDescriptionSpanContainer>
+                        <GiStarsStack />
+                        <AbautDescriptionSpan>
+                            Transformando ideias em uma experiencia digital
+                        </AbautDescriptionSpan>
+                        <GiStarsStack />
+                    </AbautDescriptionSpanContainer>
+                </AbautDescriptionContainer>
 
-            <DescriptionContainer ref={DescriptionRef}>
-                <DescriptionContent>
-                    <DescriptionTitleContainer>
+                <DescriptionContainer ref={DescriptionRef}>
+                    <DescriptionContent>
+                        <DescriptionTitleContainer>
 
-                        <DescriptionSubTitle>
-                            Hello World !
-                        </DescriptionSubTitle>
+                            <DescriptionSubTitle>
+                                Hello World !
+                            </DescriptionSubTitle>
 
-                        <DescriptionTitle>
-                            Eu sou <span>Caio Colli</span>
-                        </DescriptionTitle>
+                            <DescriptionTitle>
+                                Eu sou <span>Caio Colli</span>
+                            </DescriptionTitle>
 
-                    </DescriptionTitleContainer>
+                        </DescriptionTitleContainer>
 
-                    <DescriptionParagraph>
-                        desenvolvedor FullStack com experiência e conhecimento em desenvolvimento web em linguagens como React, JavaScript, TypeScript, HTML, CSS, PHP, Node.js e MySQL.
-                    </DescriptionParagraph>
+                        <DescriptionParagraph>
+                            desenvolvedor FullStack com experiência e conhecimento em desenvolvimento web em linguagens como React, JavaScript, TypeScript, HTML, CSS, PHP, Node.js e MySQL.
+                        </DescriptionParagraph>
 
-                    <DescriptionButtons>
-                        <PrimaryButtonComponent text="Baixar CV" onClick={handleClickCv}>
-                            <BsEnvelopePaper />
-                        </PrimaryButtonComponent>
+                        <DescriptionButtons>
+                            <PrimaryButtonComponent text="Baixar CV" onClick={handleClickCv}>
+                                <BsEnvelopePaper />
+                            </PrimaryButtonComponent>
 
-                        <SecondaryButtonComponent text="Projetos">
-                            <IoCodeOutline />
-                        </SecondaryButtonComponent>
-                    </DescriptionButtons>
-                </DescriptionContent>
+                            <SecondaryButtonComponent text="Projetos">
+                                <IoCodeOutline />
+                            </SecondaryButtonComponent>
+                        </DescriptionButtons>
+                    </DescriptionContent>
 
-                <DescriptionImageContent />
-            </DescriptionContainer>
+                    <DescriptionImageContent ref={DescriptionImageRef} />
+                </DescriptionContainer>
 
-            <AbautCardsList ref={AbautCardsRef}>
-                {cards.map((card, index) => (
-                    <AbautCardItem key={index}>
-                        <AbautCardHeader>
-                            <AbautCardHeaderIcon>
-                                {card.icon}
-                            </AbautCardHeaderIcon>
-                            <AbautCardHeaderQuantity>
-                                {card.quantity}
-                            </AbautCardHeaderQuantity>
-                        </AbautCardHeader>
+                <AbautCardsList ref={AbautCardsRef}>
+                    {cards.map((card, index) => (
+                        <AbautCardItem key={index}>
+                            <AbautCardHeader>
+                                <AbautCardHeaderIcon>
+                                    {card.icon}
+                                </AbautCardHeaderIcon>
+                                <AbautCardHeaderQuantity>
+                                    {card.quantity}
+                                </AbautCardHeaderQuantity>
+                            </AbautCardHeader>
 
-                        <AbautCardTexts>
-                            <AbautCardTitle>
-                                {card.title}
-                            </AbautCardTitle>
-                            <AbautCardSubTitle>
-                                {card.subTitle}
-                            </AbautCardSubTitle>
-                        </AbautCardTexts>
-                    </AbautCardItem>
-                ))}
-            </AbautCardsList>
+                            <AbautCardTexts>
+                                <AbautCardTitle>
+                                    {card.title}
+                                </AbautCardTitle>
+                                <AbautCardSubTitle>
+                                    {card.subTitle}
+                                </AbautCardSubTitle>
+                            </AbautCardTexts>
+                        </AbautCardItem>
+                    ))}
+                </AbautCardsList>
+            </AbautContent >
         </AbautContainer >
     )
 }

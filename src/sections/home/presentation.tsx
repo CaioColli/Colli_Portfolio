@@ -15,9 +15,7 @@ const MainContent = styled.main`
     flex-direction: column;
     min-height: 100%;
     justify-content: center;
-    max-height: 1080px;
     position: relative;
-    width: 100%;
 
     @media screen and (width <= 500px) {
         align-items: center;
@@ -71,15 +69,14 @@ const PresentationCardTitle = styled.span`
     transition: 0.2s ease-in-out;
 `;
 
-interface PresentationTitleProps {
-    $primary?: boolean;
-}
-
 const PresentationTitleContainer = styled.div`
     display: flex;
     flex-direction: column;
 `;
 
+interface PresentationTitleProps {
+    $primary?: boolean;
+}
 const PresentationTitle = styled.h1<PresentationTitleProps>`
     color: ${(props) => (props.$primary ? "var(--orange)" : "var(--white)")};
     font-size: 48px;
@@ -151,30 +148,30 @@ export const Presentation = () => {
                 duration: 1,
                 ease: "back.out(4)",
             })
-            .to(presentationTltlesRef.current, {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                ease: "back.out(2)",
-            }, "-=0.5")
-            .to(presentationDescriptionRef.current, {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                ease: "back.out(2)",
-            }, "-=0.5")
-            .to(presentationCardsRef.current, {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                ease: "back.out(2)",
-            }, "-=0.5")
-            .to(presentationButtonsRef.current, {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                ease: "back.out(2)",
-            }, "-=0.5");
+                .to(presentationTltlesRef.current, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: "back.out(2)",
+                }, "-=0.5")
+                .to(presentationDescriptionRef.current, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: "back.out(2)",
+                }, "-=0.5")
+                .to(presentationCardsRef.current, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: "back.out(2)",
+                }, "-=0.5")
+                .to(presentationButtonsRef.current, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: "back.out(2)",
+                }, "-=0.5");
         }
     }, [])
 

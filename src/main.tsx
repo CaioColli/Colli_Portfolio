@@ -1,23 +1,31 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { Routes } from './routes'
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
-const GlobalStyles = createGlobalStyle`
-  :root {
-    --black: #212121;
-    --gray: #3A3A3A;
-    --orange: #FA4B00;
-    --white: #F3F3F3;
-    --ligthGray: #8C8C8C;
-  }
-
-  * {
+const AppContainer = styled.div`
     margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
     width: 1920px;
     max-width: 100%;
+`;
+
+const GlobalStyles = createGlobalStyle`
+  :root {
+    --black: #212121;
+    --gray: #3A3A3A;
+    --transparentGray: rgba(220, 220, 220, 20%);
+    --orange: #FA4B00;
+    --white: #F3F3F3;
+    --ligthGray: #8C8C8C;
+    --transparentGray: rgba(140, 140, 140, 20%);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 
   @font-face {
@@ -28,11 +36,14 @@ const GlobalStyles = createGlobalStyle`
   body {
     font-family: 'CodeBold', sans-serif;
   }
+  
 `
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <GlobalStyles />
-    <Routes />
+    <AppContainer>
+      <Routes />
+    </AppContainer>
   </StrictMode>
 )

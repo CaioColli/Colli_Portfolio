@@ -4,33 +4,27 @@ import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
 
 const HeaderContainer = styled.header`
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    padding: 48px 10%;
     position: absolute;
+    width: 100%;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
 
-    @media screen and (width <= 900px) and (width >= 500px) {
+    @media screen and (width <= 900px) and (width > 500px) {
         position: relative;
         left: 0;
         transform: translateX(0);
-    }
-
-    @media screen and (width <= 320px) {
-        padding: 16px;
-    }
+}
 `;
 
 const HeaderMenuButton = styled.button`
     all: unset;
     display: none;
+    margin: 32px 0 0 32px;
 
-    @media screen and (width <= 500px) {
-        display: block;
-    }
+@media screen and (width <= 500px) {
+    display: block;
+}
 `;
 
 const HeaderMenuIcon = styled(LuMenu)`
@@ -39,16 +33,23 @@ const HeaderMenuIcon = styled(LuMenu)`
     width: fit-content;
 `;
 
+const HeaderContent = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 48px 10%;
+
+    @media screen and (width <= 500px) {
+        display: none;
+    }
+`;
+
 const HeaderLogoSpan = styled.span`
     color: var(--orange);
     font-size: 24px;
     max-width: fit-content;
     cursor: pointer;
     margin: 0;
-
-    @media screen and (width <= 500px) {
-        display: none;
-    }
 `;
 
 const HeaderList = styled.ul`
@@ -56,10 +57,6 @@ const HeaderList = styled.ul`
     gap: 24px;
     max-width: fit-content;
     margin: 0;
-
-    @media screen and (width <= 500px) {
-        display: none;
-    }
 `;
 
 const HeaderListItem = styled.li`
@@ -78,10 +75,10 @@ const HeaderListItem = styled.li`
 export const Header = () => {
     const logoRef = useRef<HTMLElement>(null);
     const listRef = useRef<HTMLUListElement>(null);
-    
+
     useEffect(() => {
         if (logoRef.current && listRef.current) {
-            
+
             const tl = gsap.timeline();
 
             tl.fromTo(logoRef.current, {
@@ -112,17 +109,19 @@ export const Header = () => {
                 <HeaderMenuIcon />
             </HeaderMenuButton>
 
-            <HeaderLogoSpan ref={logoRef}>
-                Colli
-            </HeaderLogoSpan>
+            <HeaderContent>
+                <HeaderLogoSpan ref={logoRef}>
+                    Colli
+                </HeaderLogoSpan>
 
-            <HeaderList ref={listRef}>
-                {headerOptions.map((item, index) => (
-                    <HeaderListItem key={index}>
-                        {item}
-                    </HeaderListItem>
-                ))}
-            </HeaderList>
+                <HeaderList ref={listRef}>
+                    {headerOptions.map((item, index) => (
+                        <HeaderListItem key={index}>
+                            {item}
+                        </HeaderListItem>
+                    ))}
+                </HeaderList>
+            </HeaderContent>
         </HeaderContainer>
     )
 }

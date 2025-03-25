@@ -20,9 +20,9 @@ const Button = styled.button<ButtonStyleProps>`
     }
 `;
 
-export const PrimaryButtonComponent = ({ children, text, largePadding = false }: ButtonComponentProps) => {
+export const PrimaryButtonComponent = ({ children, text, largePadding = false, onClick  }: ButtonComponentProps) => {
     return (
-        <Button $largePadding={largePadding}>
+        <Button $largePadding={largePadding} onClick={onClick}>
             <ButtonIcon>
                 {children}
             </ButtonIcon>

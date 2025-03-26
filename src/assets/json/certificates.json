@@ -1,42 +1,50 @@
 [
     {
         "id": 1,
-        "image": "",
-        "link": ""
+        "image": "./src/assets/images/certificateImages/certificateHTML.svg",
+        "title": "Formação HTML e CSS",
+        "link": "https://cursos.alura.com.br/user/caiocolli/degree-html-e-css-v232036-232036/certificate"
     },
     {
         "id": 2,
-        "image": "",
-        "link": ""
+        "image": "./src/assets/images/certificateImages/certificateFrontEnd.svg",
+        "title": "Formação Front-End",
+        "link": "https://cursos.alura.com.br/user/caiocolli/degree-front-end-113709/certificate"
     },
     {
         "id": 3,
-        "image": "",
-        "link": ""
+        "image": "./src/assets/images/certificateImages/certificateReact.svg",
+        "title": "Formação React com JavaScript",
+        "link": "https://cursos.alura.com.br/user/caiocolli/degree-react-javascript-700230/certificate"
     },
     {
         "id": 4,
-        "image": "",
-        "link": ""
+        "image": "./src/assets/images/certificateImages/certificateTypeScript.svg",
+        "title": "Formação TypeScript",
+        "link": "https://cursos.alura.com.br/user/caiocolli/degree-typescript-desenvolva-front-end-produtividade-644154/certificate"
     },
     {
         "id": 5,
-        "image": "",
-        "link": ""
+        "image": "./src/assets/images/certificateImages/certificateNode.svg",
+        "title": "Formação Full-Stack com Node.js",
+        "link": "https://cursos.alura.com.br/user/caiocolli/degree-full-stack-react-node-js-455268/certificate"
     },
     {
         "id": 6,
-        "image": "",
-        "link": ""
+        "image": "./src/assets/images/certificateImages/certificatePHP.svg",
+        "title": "Formação PHP",
+        "link": "https://cursos.alura.com.br/user/caiocolli/degree-linguagem-php-757815/certificate"
     },
     {
         "id": 7,
-        "image": "",
-        "link": ""
+        "image": "./src/assets/images/certificateImages/certificateSQL.svg",
+        "title": "Formação SQL",
+        "link": "https://cursos.alura.com.br/user/caiocolli/degree-conhecendo-sql-690732/certificate"
     },
     {
         "id": 8,
-        "image": "",
-        "link": ""
+        "image": "./src/assets/images/certificateImages/certificateFigma.svg",
+        "title": "Formação Figma",
+        "link": "https://cursos.alura.com.br/user/caiocolli/degree-figma-v459428-459428/certificate"
     }
 ]

@@ -136,6 +136,11 @@ const PortfolioCardsListItem = styled.li`
 const PortfolioCardsListItemImagem = styled.img`
     width: 60%;
     padding-top: 16px;
+    transition: 0.2s ease-in;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
 `;
 
 const PortfolioCardsListItemContent = styled.div`
@@ -349,6 +354,8 @@ export const Portfolio = () => {
                                 )
                             })
                         }
+
+                        
                     </PortfolioCardsList>
 
                 </PortfolioCardsContent>

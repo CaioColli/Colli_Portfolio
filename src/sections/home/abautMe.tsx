@@ -18,12 +18,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 const AbautContainer = styled.section`
     min-height: 100%;
-    padding: 96px 0;
+    padding-top: 96px;
     width: 70%;
 
     @media screen and (width <= 900px) {
         width: 100%;
-        padding: 96px 24px;
+        padding: 0 24px 0 24px;
     }
 `;
 
@@ -152,7 +152,7 @@ const AbautCardItem = styled.li`
     display: flex;
     flex-direction: column;
     flex: 1;
-    background-color: var(--transparentGray);
+    background-color: var(--transparentLigthGray);
     border-radius: 8px;
     transition: 0.2s ease-in-out;
     min-width: 300px;
@@ -200,7 +200,7 @@ const AbautCardSubTitle = styled.span`
 `;
 
 export const AbautMe = () => {
-    const AbautContentRef = useRef<HTMLDivElement>(null);
+    const AbautContainerRef = useRef<HTMLElement>(null);
     const AbautDescriptionRef = useRef<HTMLDivElement>(null);
     const DescriptionImageRef = useRef<HTMLDivElement>(null);
     const DescriptionRef = useRef<HTMLDivElement>(null);
@@ -215,7 +215,7 @@ export const AbautMe = () => {
 
     useEffect(() => {
         if (
-            AbautContentRef.current,
+            AbautContainerRef.current,
             AbautDescriptionRef.current,
             DescriptionImageRef.current,
             DescriptionRef.current,
@@ -223,7 +223,7 @@ export const AbautMe = () => {
         ) {
             const tl = gsap.timeline({
                 scrollTrigger: {
-                    trigger: AbautContentRef.current,
+                    trigger: AbautContainerRef.current,
                     markers: false,
                     start: "top center",
                     end: "top",
@@ -250,7 +250,7 @@ export const AbautMe = () => {
                     opacity: 1,
                     scale: 1,
                     y: 0
-                }, "-=0.3")
+                }, "-=0.2")
                 .to(AbautCardsRef.current, {
                     opacity: 1,
                     scale: 1,
@@ -282,8 +282,8 @@ export const AbautMe = () => {
     ]
 
     return (
-        <AbautContainer>
-            <AbautContent ref={AbautContentRef}>
+        <AbautContainer ref={AbautContainerRef}>
+            <AbautContent>
                 <AbautDescriptionContainer ref={AbautDescriptionRef}>
                     <AbautDescriptionTitle>Sobre mim</AbautDescriptionTitle>
 

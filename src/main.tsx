@@ -15,11 +15,12 @@ const GlobalStyles = createGlobalStyle`
   :root {
     --black: #212121;
     --gray: #3A3A3A;
-    --transparentGray: rgba(220, 220, 220, 20%);
+    --transparentGray: rgba(140, 140, 140, 20%);
     --orange: #FA4B00;
     --white: #F3F3F3;
     --ligthGray: #8C8C8C;
-    --transparentGray: rgba(140, 140, 140, 20%);
+    --transparentLigthGray: rgba(220, 220, 220, 20%);
+    --transparent: rgba(255, 255, 255, 10%)
   }
 
   * {

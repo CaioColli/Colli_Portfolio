@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import { Presentation } from "../sections/home/presentation";
 import { AbautMe } from "../sections/home/abautMe";
+import { Portfolio } from "../sections/home/portfolio";
 
 const Container = styled.div`
     height: 100dvh;
@@ -12,6 +13,7 @@ const Container = styled.div`
 const Sections = styled.div`
     background: linear-gradient(180deg, var(--black) 30%, var(--gray) 100%);
     display: flex;
+    gap: 128px;
     flex-direction: column;
     align-items: center;
 `;
@@ -23,6 +25,7 @@ export const Home = () => {
 
             <Sections>
                 <AbautMe />
+                <Portfolio />
             </Sections>
         </Container>
     )

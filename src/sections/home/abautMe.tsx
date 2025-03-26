@@ -238,23 +238,23 @@ export const AbautMe = () => {
             ], {
                 opacity: 0,
                 scale: 0.8,
-                y: 100
+                y: 100,
             })
 
             tl.to(AbautDescriptionRef.current, {
                 opacity: 1,
                 scale: 1,
-                y: 0
+                y: 0,
             })
                 .to(DescriptionRef.current, {
                     opacity: 1,
                     scale: 1,
-                    y: 0
+                    y: 0,
                 }, "-=0.2")
                 .to(AbautCardsRef.current, {
                     opacity: 1,
                     scale: 1,
-                    y: 0
+                    y: 0,
                 }, "-=0.3");
         }
 

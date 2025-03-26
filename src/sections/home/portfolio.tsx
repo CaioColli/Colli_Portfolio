@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import styled from "styled-components";
 import { Link } from "wouter";
@@ -6,6 +6,11 @@ import { Link } from "wouter";
 import projects from '../../assets/json/projects.json';
 
 import { IoIosLink } from "react-icons/io";
+
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const PortfolioContainer = styled.section`
     min-height: 100%;
@@ -195,6 +200,10 @@ export const Portfolio = () => {
     const [selectedOption, setSelectedOption] = useState('Projects');
     const [projectsToShow, setProjectsToShow] = useState(0);
 
+    const portfolioContainerRef = useRef<HTMLElement>(null);
+    const PortfolioDescriptionContainerRef = useRef<HTMLDivElement>(null);
+    const portfolioCardsContentRef = useRef<HTMLDivElement>(null);
+
     const cardsOptions = [
         {
             "title": "Projetos",
@@ -225,14 +234,52 @@ export const Portfolio = () => {
         }
     }, []);
 
+    useEffect(() => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: portfolioContainerRef.current,
+                markers: true,
+                start: 'top center',
+                end: 'top',
+                scrub: 2
+            }
+        });
+
+        if (
+            portfolioCardsContentRef.current
+        ) {
+            gsap.set([
+                PortfolioDescriptionContainerRef.current,
+                portfolioCardsContentRef.current.children,
+            ], {
+                opacity: 0,
+                scale: 0.8,
+                y: 100
+            })
+
+            tl.to(PortfolioDescriptionContainerRef.current, {
+                opacity: 1,
+                scale: 1,
+                y: 0
+            })
+                .to(portfolioCardsContentRef.current.children, {
+                    opacity: 1,
+                    scale: 1,
+                    y: 0,
+                    stagger: 0.3
+                }, "-=0.2")
+        }
+
+    }, [])
+
     const truncateText = (text: string, maxLength: number) => {
         return text.length > maxLength ? text.slice(0, maxLength - 3) + "..." : text;
     };
 
     return (
-        <PortfolioContainer>
+        <PortfolioContainer ref={portfolioContainerRef}>
             <PortfolioContent>
-                <PortfolioDescriptionContainer>
+                <PortfolioDescriptionContainer ref={PortfolioDescriptionContainerRef}>
                     <PortfolioDescriptionTitle>
                         Portfolio
                     </PortfolioDescriptionTitle>
@@ -242,7 +289,7 @@ export const Portfolio = () => {
                     </PortfolioDescriptionSpan>
                 </PortfolioDescriptionContainer>
 
-                <PortfolioCardsContent>
+                <PortfolioCardsContent ref={portfolioCardsContentRef}>
                     <PortfolioCardsOptionsList>
                         {cardsOptions.map((card, index) => (
                             <PortfolioCardsOptionsItem key={index} $isSelected={selectedOption === card.inputValue}>
@@ -303,7 +350,7 @@ export const Portfolio = () => {
                             })
                         }
                     </PortfolioCardsList>
-                    
+
                 </PortfolioCardsContent>
             </PortfolioContent>
         </PortfolioContainer>

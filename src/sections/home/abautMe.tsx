@@ -23,7 +23,7 @@ const AbautContainer = styled.section`
 
     @media screen and (width <= 900px) {
         width: 100%;
-        padding: 0 24px 0 24px;
+        padding: 48px 24px 0 24px;
     }
 `;
 

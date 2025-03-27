@@ -5,6 +5,7 @@ import { Link } from "wouter";
 
 import projects from '../../assets/json/projects.json';
 import certificates from '../../assets/json/certificates.json';
+import skills from '../../assets/json/skills.json';
 
 import { IoIosLink } from "react-icons/io";
 
@@ -135,12 +136,18 @@ const PortfolioCardsListItem = styled.li`
     align-items: center;
     flex-direction: column;
     border-radius: 8px;
+    gap: 16px;
     background-color: var(--transparentLigthGray);
 `;
 
-const PortfolioCardsListItemImagem = styled.img`
+interface PortfolioCardsListItemImagemProps {
+    $skill?: boolean
+}
+
+const PortfolioCardsListItemImagem = styled.img<PortfolioCardsListItemImagemProps>`
     width: 60%;
     padding-top: 16px;
+    padding-bottom: ${({ $skill }) => ($skill ? '16px' : '0px')};
     transition: 0.2s ease-in;
 
     &:hover {
@@ -150,7 +157,7 @@ const PortfolioCardsListItemImagem = styled.img`
 
 const PortfolioCardsListItemContent = styled.div`
     width: 100%;
-    padding: 16px;
+    padding: 0 16px 16px 16px;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -178,17 +185,20 @@ const PortfolioCardsListItemButtonsContainer = styled.div`
     justify-content: space-between;
 `;
 
-const PortfolioCardsListItemAnchorContainer = styled.div`
+
+const PortfolioCardsListItemAnchor = styled.a`
+    all: unset;
     display: flex;
     gap: 4px;
     align-content: center;
     font-size: 14px;
     cursor: pointer;
     color: var(--orange);
-`;
+    transition: 0.2s ease-in;
 
-const PortfolioCardsListItemAnchor = styled.a`
-    all: unset;
+    &:hover {
+        transform: translateY(-3px);
+    }
 `;
 
 const PortfolioCardsListItemButtonLink = styled(Link)`
@@ -232,6 +242,7 @@ export const Portfolio = () => {
 
     const dataProjects = projects;
     const dataCertificates = certificates;
+    const dataSkills = skills;
 
     useEffect(() => {
         const handleResizeForProjects = () => {
@@ -293,19 +304,21 @@ export const Portfolio = () => {
 
     }, [])
 
-    const handleOptionClick = () => {
-        if (portfolioCardsListRef.current) {
-            gsap.fromTo(portfolioCardsListRef.current, {
-                opacity: 0,
-                scale: 0.8,
-                y: 100
-            }, {
-                opacity: 1,
-                scale: 1,
-                y: 0,
-                duration: 0.5,
-                ease: "sine.inOut",
-            })
+    const handleOptionClick = (value: string) => {
+        if (value != selectedOption) {
+            if (portfolioCardsListRef.current) {
+                gsap.fromTo(portfolioCardsListRef.current, {
+                    opacity: 0,
+                    scale: 0.8,
+                    y: 100
+                }, {
+                    opacity: 1,
+                    scale: 1,
+                    y: 0,
+                    duration: 0.5,
+                    ease: "sine.inOut",
+                })
+            }
         }
     }
 
@@ -336,7 +349,7 @@ export const Portfolio = () => {
                                         name="cardsOptions"
                                         value={card.inputValue}
                                         onChange={() => setSelectedOption(card.inputValue)}
-                                        onClick={handleOptionClick}
+                                        onClick={() => handleOptionClick(card.inputValue)}
                                     />
                                     {card.title}
                                 </PortfolioCardsOptionsLabel>
@@ -366,13 +379,10 @@ export const Portfolio = () => {
 
                                         <PortfolioCardsListItemButtonsContainer>
                                             {project.demoLink === null || project.demoLink === '' ? null : (
-                                                <PortfolioCardsListItemAnchorContainer>
-                                                    <PortfolioCardsListItemAnchor href={project.demoLink?.toString()} target="_blank">
-                                                        Demo
-                                                    </PortfolioCardsListItemAnchor>
-
+                                                <PortfolioCardsListItemAnchor href={project.demoLink?.toString()} target="_blank">
+                                                    Demo
                                                     <IoIosLink />
-                                                </PortfolioCardsListItemAnchorContainer>
+                                                </PortfolioCardsListItemAnchor>
                                             )}
 
                                             <PortfolioCardsListItemButtonLink to={`/project/${project.id}`}>
@@ -403,20 +413,29 @@ export const Portfolio = () => {
                                             </PortfolioCardsListItemDescription>
                                         </PortfolioCardsListItemTextsContainer>
 
-                                        <PortfolioCardsListItemAnchorContainer>
-                                            <PortfolioCardsListItemAnchor href={certificate.link?.toString()} target="_blank">
-                                                Link
-                                            </PortfolioCardsListItemAnchor>
-
+                                        <PortfolioCardsListItemAnchor href={certificate.link?.toString()} target="_blank">
+                                            Link
                                             <IoIosLink />
-                                        </PortfolioCardsListItemAnchorContainer>
+                                        </PortfolioCardsListItemAnchor>
                                     </PortfolioCardsListItemContent>
                                 </PortfolioCardsListItem>
                             ))
                         }
-                    </PortfolioCardsList>
 
+                        {selectedOption === 'Skills' &&
+                            dataSkills.map((skill) => (
+                                <PortfolioCardsListItem key={skill.id}>
+                                    <PortfolioCardsListItemImagem
+                                        src={skill.image}
+                                        alt={skill.name}
+                                        $skill={true}
+                                    />
+                                </PortfolioCardsListItem>
+                            )
+                            )}
+                    </PortfolioCardsList>
                 </PortfolioCardsContent>
+
             </PortfolioContent>
         </PortfolioContainer>
     )

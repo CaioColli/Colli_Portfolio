@@ -249,7 +249,7 @@ export const Portfolio = () => {
         };
 
         const handleResizeForCertificates = () => {
-            setCertificatesToShow(window.innerWidth <= 500 ? 3 : 8);
+            setCertificatesToShow(window.innerWidth <= 500 ? 4 : 8);
         };
 
         handleResizeForProjects();
@@ -270,7 +270,7 @@ export const Portfolio = () => {
                 trigger: portfolioContainerRef.current,
                 markers: true,
                 start: 'top bottom',
-                end: 'top center',
+                end: '30% center',
                 scrub: 2
             }
         });

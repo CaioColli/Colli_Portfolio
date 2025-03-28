@@ -30,6 +30,10 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   @font-face {
     font-family: 'CodeBold';
     src: url('./src/assets/fonts/codeBold.otf');

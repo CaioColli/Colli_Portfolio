@@ -1,6 +1,6 @@
 import { Route, Switch } from "wouter"
 
-import { Home } from "../pages"
+import { Home } from "../pages/home"
 
 export const Routes = () => {
     return (

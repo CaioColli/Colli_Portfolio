@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Presentation } from "../sections/home/presentation";
 import { AbautMe } from "../sections/home/abautMe";
 import { Portfolio } from "../sections/home/portfolio";
+import { Contact } from "../sections/home/contact";
 
 const Container = styled.div`
     height: 100dvh;
@@ -26,6 +27,7 @@ export const Home = () => {
             <Sections>
                 <AbautMe />
                 <Portfolio />
+                <Contact />
             </Sections>
         </Container>
     )

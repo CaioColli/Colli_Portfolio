@@ -185,7 +185,6 @@ const PortfolioCardsListItemButtonsContainer = styled.div`
     justify-content: space-between;
 `;
 
-
 const PortfolioCardsListItemAnchor = styled.a`
     all: unset;
     display: flex;
@@ -269,9 +268,9 @@ export const Portfolio = () => {
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: portfolioContainerRef.current,
-                markers: false,
-                start: 'top center',
-                end: 'top',
+                markers: true,
+                start: 'top bottom',
+                end: 'top center',
                 scrub: 2
             }
         });
@@ -286,18 +285,21 @@ export const Portfolio = () => {
             ], {
                 opacity: 0,
                 scale: 0.8,
-                y: 100
+                y: 100,
+                delay: 0.5
             })
 
             tl.to(PortfolioDescriptionContainerRef.current, {
                 opacity: 1,
                 scale: 1,
-                y: 0
+                y: 0,
+                delay: 0.5
             })
                 .to(portfolioCardsContentRef.current.children, {
                     opacity: 1,
                     scale: 1,
                     y: 0,
+                    delay: 0.5,
                     stagger: 0.3
                 }, "-=0.2")
         }

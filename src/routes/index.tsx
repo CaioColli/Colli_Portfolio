@@ -1,6 +1,7 @@
 import { Route, Switch } from "wouter"
 
 import { Home } from "../pages/home"
+import { Project } from "../pages/project"
 
 export const Routes = () => {
     return (
@@ -8,7 +9,7 @@ export const Routes = () => {
             <Switch>
                 <Route path="/" component={Home} />
                 <Route path="/project/:id">
-                    {(params: { id: string }) => <h1> {params.id} </h1> }
+                    {(params: { id: string }) => <Project id={params.id} />  }
                 </Route>
             </Switch>
         </>

@@ -36,7 +36,12 @@ const GlobalStyles = createGlobalStyle`
 
   @font-face {
     font-family: 'CodeBold';
-    src: url('./src/assets/fonts/codeBold.otf');
+    src: url('/assets/fonts/codeBold.otf');
+  }
+
+  @font-face {
+    font-family: 'louis';
+    src: url('/assets/fonts/louisGeorgeCafe.ttf');
   }
 
   body {

@@ -54,5 +54,11 @@
         "title": "Formação Figma",
         "description": "Essa formação de Figma vai desde o básico ao avançado na pratica construindo um projeto Web.",
         "link": "https://cursos.alura.com.br/user/caiocolli/degree-figma-v459428-459428/certificate"
+    },
+    {
+        "id": 9,
+        "image": "./src/assets/images/certificateImages/certificateWordpress.svg","title": "Formação WordPress",
+        "description": "Essa formação de WordPress vai desde o básico ao avançado usando Elementor e plugins.",
+        "link": "https://cursos.alura.com.br/degree/certificate/88d6b55c-9e2f-4934-a018-f3ab197aee7f?lang"
     }
 ]

@@ -43,5 +43,10 @@
         "id": 9,
         "image": "./src/assets/images/skillsImages/skillFigma.svg",
         "name": "Figma"
+    },
+    {
+        "id": 10,
+        "image": "./src/assets/images/skillsImages/skillWordpress.svg",
+        "name": "WordPress"
     }
 ]

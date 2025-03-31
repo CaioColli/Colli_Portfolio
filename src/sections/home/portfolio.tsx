@@ -249,7 +249,7 @@ export const Portfolio = () => {
         };
 
         const handleResizeForCertificates = () => {
-            setCertificatesToShow(window.innerWidth <= 500 ? 4 : 8);
+            setCertificatesToShow(window.innerWidth <= 500 ? 5 : 10);
         };
 
         handleResizeForProjects();
@@ -268,7 +268,7 @@ export const Portfolio = () => {
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: portfolioContainerRef.current,
-                markers: true,
+                markers: false,
                 start: 'top bottom',
                 end: '30% center',
                 scrub: 2

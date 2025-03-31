@@ -129,9 +129,15 @@ const PortfolioCardsList = styled.ul`
     justify-content: center;
 `;
 
-const PortfolioCardsListItem = styled.li`
+interface PortfolioCardsListItemImagemProps {
+    $skill?: boolean
+}
+
+const PortfolioCardsListItem = styled.li<PortfolioCardsListItemImagemProps>`
     all: unset;
     display: flex;
+    flex: 250px;
+    flex: ${({ $skill }) => ($skill ? '250px' : 'none')};
     max-width: 350px;
     align-items: center;
     flex-direction: column;
@@ -139,10 +145,6 @@ const PortfolioCardsListItem = styled.li`
     gap: 16px;
     background-color: var(--transparentLigthGray);
 `;
-
-interface PortfolioCardsListItemImagemProps {
-    $skill?: boolean
-}
 
 const PortfolioCardsListItemImagem = styled.img<PortfolioCardsListItemImagemProps>`
     width: 60%;
@@ -426,7 +428,10 @@ export const Portfolio = () => {
 
                         {selectedOption === 'Skills' &&
                             dataSkills.map((skill) => (
-                                <PortfolioCardsListItem key={skill.id}>
+                                <PortfolioCardsListItem
+                                    $skill={true}
+                                    key={skill.id}
+                                >
                                     <PortfolioCardsListItemImagem
                                         src={skill.image}
                                         alt={skill.name}

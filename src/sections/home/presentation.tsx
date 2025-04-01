@@ -185,7 +185,7 @@ export const Presentation = () => {
     return (
         <MainContent>
             <BackgroundVideo autoPlay loop muted>
-                <source src="./src/assets/videos/backgroundVideo.mp4" />
+                <source src="assets/videos/backgroundVideo.mp4" />
             </BackgroundVideo>
 
             <Header />

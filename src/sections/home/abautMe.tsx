@@ -115,7 +115,7 @@ const DescriptionButtons = styled.div`
 const DescriptionImageContent = styled.div`
     width: 400px;
     height: 400px;
-    background-image: url('./src/assets/images/controlBackground.svg');
+    background-image: url('assets/images/controlBackground.svg');
     background-position: center;
     background-size: cover;
     border: 2px solid var(--lightGray);

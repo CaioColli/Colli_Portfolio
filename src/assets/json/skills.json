@@ -1,52 +1,52 @@
 [
     {
         "id": 1,
-        "image": "./src/assets/images/skillsImages/skillJavascript.svg",
+        "image": "assets/images/skillsImages/skillJavascript.svg",
         "name": "JavaScript"
     },
     {
         "id": 2,
-        "image": "./src/assets/images/skillsImages/skillTypescript.svg",
+        "image": "assets/images/skillsImages/skillTypescript.svg",
         "name": "TypeScript"
     },
     {
         "id": 3,
-        "image": "./src/assets/images/skillsImages/skillReact.svg",
+        "image": "assets/images/skillsImages/skillReact.svg",
         "name": "React"
     },
     {
         "id": 4,
-        "image": "./src/assets/images/skillsImages/skillNode.svg",
+        "image": "assets/images/skillsImages/skillNode.svg",
         "name": "Node"
     },
     {
         "id": 5,
-        "image": "./src/assets/images/skillsImages/skillPHP.svg",
+        "image": "assets/images/skillsImages/skillPHP.svg",
         "name": "PHP"
     },
     {
         "id": 6,
-        "image": "./src/assets/images/skillsImages/skillMySQL.svg",
+        "image": "assets/images/skillsImages/skillMySQL.svg",
         "name": "MySQL"
     },
     {
         "id": 7,
-        "image": "./src/assets/images/skillsImages/skillHTML.svg",
+        "image": "assets/images/skillsImages/skillHTML.svg",
         "name": "HTML"
     },
     {
         "id": 8,
-        "image": "./src/assets/images/skillsImages/SkillCSS.svg",
+        "image": "assets/images/skillsImages/SkillCSS.svg",
         "name": "CSS"
     },
     {
         "id": 9,
-        "image": "./src/assets/images/skillsImages/skillFigma.svg",
+        "image": "assets/images/skillsImages/skillFigma.svg",
         "name": "Figma"
     },
     {
         "id": 10,
-        "image": "./src/assets/images/skillsImages/skillWordpress.svg",
+        "image": "assets/images/skillsImages/skillWordpress.svg",
         "name": "WordPress"
     }
 ]

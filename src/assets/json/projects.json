@@ -33,7 +33,7 @@
     {
         "id": 2,
         "title": "Bmw Showcase",
-        "image": "./src/assets/images/projectImages/projectBmwShowcase.png",
+        "image": "/assets/images/projectImages/projectBmwShowcase.png",
         "description": "Bmw Showcase é um projeto demostrativo de um catalogo dos novos carros da BMW.",
         "demoLink": "https://bmw-pink-eta.vercel.app/",
         "fullDescription": "BMW Showcase é um catálogo digital interativo desenvolvido com React.js, projetado para apresentar os modelos mais recentes da BMW de forma intuitiva e envolvente. O usuário pode explorar os veículos por meio de uma pesquisa dinâmica e filtros avançados, permitindo refinar a busca por tipo de carroceria, combustível e linha do carro/n/nA experiência do usuário é enriquecida com animações e interações visuais, como efeitos em SVG ao passar o mouse sobre os cards, imagens que se transformam em vídeos dinâmicos e modais interativos que oferecem mais detalhes sobre cada modelo. Além disso, todas as páginas foram desenvolvidas com um design 100% responsivo, garantindo uma navegação fluida e intuitiva em qualquer dispositivo, seja desktop, tablet ou smartphone.",
@@ -57,7 +57,7 @@
     {
         "id": 3,
         "title": "Fallout Burguer",
-        "image": "./src/assets/images/projectImages/projectFalloutBurguer.png",
+        "image": "/assets/images/projectImages/projectFalloutBurguer.png",
         "description": "Fallout Burguer é um projeto de uma hamburgueria inspirado na temática do jogo Fallout.",
         "demoLink": "https://burguer-house-one.vercel.app/",
         "fullDescription": "Fallout Burger foi o meu primeiro projeto desenvolvido com React, onde pude aplicar e consolidar meus conhecimentos na biblioteca. Trata-se de um cardápio online interativo, permitindo que os usuários selecionem um ou mais itens e adicionem ao carrinho para simular uma compra./n/nApós escolher os produtos, o usuário é direcionado para a página de finalização do pedido, onde preenche um formulário com nome, número de celular e endereço. Além disso, há um card exibindo todos os itens selecionados, garantindo uma visão clara do pedido./n/nA finalização da compra acontece via WhatsApp, onde os dados são enviados diretamente para o contato do restaurante. Para fins de teste, utilizei meu número pessoal na integração.",
@@ -79,7 +79,7 @@
     {
         "id": 4,
         "title": "Ohana Travel",
-        "image": "./src/assets/images/projectImages/projectOhana.png",
+        "image": "/assets/images/projectImages/projectOhana.png",
         "description": "Ohana Travel é um projeto para reservas de hospedagens, guia turisticos e aluguel de veiculos, no Havaí",
         "demoLink": null,
         "fullDescription": "Ohana Travel é uma plataforma desenvolvida para reservas de hospedagem, guias turísticos e aluguel de veículos no Havaí. O projeto foi implementado com PHP Laravel no back-end, utilizando Respect/Validation para validações e MySQL como banco de dados. O front-end foi criado com React.ts, utilizando bibliotecas como Wouter, React Query e Styled Components para uma experiência interativa e estilizada./n/nNa plataforma, os usuários podem navegar pelas diversas ofertas, pesquisar tipos de acomodação, como hotéis, resorts e bangalôs, e explorar opções de turismo no Havaí. A barra de pesquisa permite que o usuário encontre o que procura, seja uma reserva de hotel, passeio turístico ou modelo de veículo para aluguel./n/nA plataforma oferece três tipos de usuários: Administrador, Locatário e Usuário Comum. O Administrador é responsável por gerenciar o site, decidir quais ofertas serão destacadas na página principal, adicionar ou deletar serviços, e aprovar ou negar novos serviços solicitados pelos locatários. O Locatário pode enviar pedidos de novos serviços para serem adicionados à plataforma. O Usuário Comum pode fazer reservas de hospedagem, contratar guias turísticos ou alugar veículos./n/nAlém disso, a cada pedido finalizado, o locador (seja de hospedagem, guia turístico ou aluguel de veículos) recebe uma porcentagem do valor da transação.",
@@ -109,7 +109,7 @@
     {
         "id": 5,
         "title": "Anime World",
-        "image": "./src/assets/images/projectImages/projectAnime.png",
+        "image": "/assets/images/projectImages/projectAnime.png",
         "description": "AnimeWorld foi um desafio de 10 dias para consumir uma API e desenvolver uma plataforma de animes.",
         "demoLink": "https://anime-world-mu.vercel.app/",
         "fullDescription": "AnimeWorld foi um projeto desenvolvido em HTML, CSS e JavaScript Vanilla. A plataforma oferece um sistema de pesquisa dinâmica, permitindo que os usuários pesquisem por animes ou mangás registrados na API. Na página inicial, os visitantes podem encontrar animes e mangás populares, além de recomendações personalizadas./n/nA plataforma também possui um sistema de filtros, permitindo que os usuários filtrem os resultados por gênero de anime ou mangá, proporcionando uma experiência de navegação mais personalizada. O projeto é totalmente responsivo, garantindo que funcione adequadamente em diversos dispositivos e tamanhos de tela./n/nAlém disso, o sistema conta com um tratamento de erros robusto, caso algum anime ou mangá esteja com informações ausentes ou incompletas, ou até mesmo sem dados disponíveis.",

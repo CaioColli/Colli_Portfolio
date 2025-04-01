@@ -104,6 +104,8 @@ const DescriptionTitle = styled.h2`
 const DescriptionParagraph = styled.p`
     font-size: 16px;
     color: var(--white);
+    font-family: 'louis';
+    font-weight: bold;
 `;
 
 const DescriptionButtons = styled.div`

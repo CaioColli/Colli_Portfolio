@@ -2,8 +2,11 @@ import { Route, Switch } from "wouter"
 
 import { Home } from "../pages/home"
 import { Project } from "../pages/project"
+import { useScrollToTop } from "../hooks/windowScroll"
 
 export const Routes = () => {
+    useScrollToTop();
+
     return (
         <>
             <Switch>

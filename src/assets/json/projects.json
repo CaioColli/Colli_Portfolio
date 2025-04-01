@@ -34,7 +34,7 @@
         "id": 2,
         "title": "Bmw Showcase",
         "image": "/assets/images/projectImages/projectBmwShowcase.png",
-        "description": "Bmw Showcase é um projeto demostrativo de um catalogo dos novos carros da BMW.",
+        "description": "BMW Showcase é um projeto demonstrativo que apresenta um catálogo dos mais novos modelos da BMW, destacando seu design e inovação.",
         "demoLink": "https://bmw-pink-eta.vercel.app/",
         "fullDescription": "BMW Showcase é um catálogo digital interativo desenvolvido com React.js, projetado para apresentar os modelos mais recentes da BMW de forma intuitiva e envolvente. O usuário pode explorar os veículos por meio de uma pesquisa dinâmica e filtros avançados, permitindo refinar a busca por tipo de carroceria, combustível e linha do carro/n/nA experiência do usuário é enriquecida com animações e interações visuais, como efeitos em SVG ao passar o mouse sobre os cards, imagens que se transformam em vídeos dinâmicos e modais interativos que oferecem mais detalhes sobre cada modelo. Além disso, todas as páginas foram desenvolvidas com um design 100% responsivo, garantindo uma navegação fluida e intuitiva em qualquer dispositivo, seja desktop, tablet ou smartphone.",
         "backendGitHubLink": null,

@@ -179,6 +179,7 @@ const PortfolioCardsListItemTitle = styled.h3`
 const PortfolioCardsListItemDescription = styled.p`
     color: var(--white);
     font-size: 16px;
+    font-family: 'louis';
 `;
 
 const PortfolioCardsListItemButtonsContainer = styled.div`
@@ -377,7 +378,7 @@ export const Portfolio = () => {
                                             </PortfolioCardsListItemTitle>
 
                                             <PortfolioCardsListItemDescription>
-                                                {truncateText(project.description, 100)}
+                                                {truncateText(project.description, 120)}
                                             </PortfolioCardsListItemDescription>
                                         </PortfolioCardsListItemTextsContainer>
 

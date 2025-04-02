@@ -21,7 +21,6 @@ import JsonData from '../assets/json/projects.json';
 
 const ProjectContainer = styled.section`
     display: flex;
-    align-items: center;
     justify-content: center;
     min-height: 100vh;
     background: linear-gradient(180deg, var(--black) 30%, var(--gray) 100%);
@@ -163,10 +162,11 @@ const ProjectCardsContentCard = styled.div`
     flex-direction: column;
     gap: 16px;
     min-width: 300px;
+    max-width: 300px;
 `;
 
 const ProjectCardsContentCardImage = styled.img`
-    width: 200px;
+    width: 100%;
 `;
 
 const ProjectCardsContentCardIcon = styled(TiStarFullOutline)`

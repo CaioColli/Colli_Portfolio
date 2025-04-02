@@ -114,7 +114,7 @@
         "demoLink": "https://anime-world-mu.vercel.app/",
         "fullDescription": "AnimeWorld foi um projeto desenvolvido em HTML, CSS e JavaScript Vanilla. A plataforma oferece um sistema de pesquisa dinâmica, permitindo que os usuários pesquisem por animes ou mangás registrados na API. Na página inicial, os visitantes podem encontrar animes e mangás populares, além de recomendações personalizadas./n/nA plataforma também possui um sistema de filtros, permitindo que os usuários filtrem os resultados por gênero de anime ou mangá, proporcionando uma experiência de navegação mais personalizada. O projeto é totalmente responsivo, garantindo que funcione adequadamente em diversos dispositivos e tamanhos de tela./n/nAlém disso, o sistema conta com um tratamento de erros robusto, caso algum anime ou mangá esteja com informações ausentes ou incompletas, ou até mesmo sem dados disponíveis.",
         "backendGitHubLink": null,
-        "frontendGitHubLink": "https://anime-world-mu.vercel.app/",
+        "frontendGitHubLink": "https://github.com/CaioColli/AnimeWorld",
         "figmaLink": null,
         "technologies": [
             "HTML",

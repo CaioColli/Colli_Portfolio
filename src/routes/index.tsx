@@ -12,7 +12,7 @@ export const Routes = () => {
             <Switch>
                 <Route path="/" component={Home} />
                 <Route path="/project/:id">
-                    {(params: { id: string }) => <Project id={params.id} />  }
+                    {(params: any) => <Project id={params.id} />}
                 </Route>
             </Switch>
         </>

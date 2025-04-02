@@ -159,7 +159,7 @@ export const Contact = () => {
     }, [])
 
     return (
-        <ContactContainer ref={ContactContainerRef}>
+        <ContactContainer ref={ContactContainerRef} id="Contact">
             <ContactContent ref={ContactContentRef}>
                 <ContactDescriptionContainer>
                     <ContactDescriptionTitle>

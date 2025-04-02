@@ -11,6 +11,7 @@ import { SecondaryButtonComponent } from "../../components/secondaryButton";
 import { useEffect, useRef } from "react";
 
 import gsap from "gsap";
+import { handleScrollTo } from "../../utils/scrollToGsap";
 
 const MainContent = styled.main`
     display: flex;
@@ -18,6 +19,7 @@ const MainContent = styled.main`
     min-height: 100%;
     justify-content: center;
     position: relative;
+    z-index: 1;
 
     @media screen and (width <= 500px) {
         align-items: center;
@@ -183,7 +185,7 @@ export const Presentation = () => {
     ]
 
     return (
-        <MainContent>
+        <MainContent id="Presentation">
             <BackgroundVideo autoPlay loop muted>
                 <source src="assets/videos/backgroundVideo.mp4" />
             </BackgroundVideo>
@@ -220,12 +222,12 @@ export const Presentation = () => {
                     ))}
                 </PresentationCardsList>
 
-                <PresentationButtonsContainer ref={presentationButtonsRef}>
-                    <PrimaryButtonComponent text="Projetos">
+                <PresentationButtonsContainer ref={presentationButtonsRef} onClick={() => handleScrollTo("Portfolio")}>
+                    <PrimaryButtonComponent text="Portfolio">
                         <IoIosLink />
                     </PrimaryButtonComponent>
 
-                    <SecondaryButtonComponent text="Contato">
+                    <SecondaryButtonComponent text="Contato" onClick={() => handleScrollTo("Contact")}>
                         <IoMailOpenOutline />
                     </SecondaryButtonComponent>
                 </PresentationButtonsContainer>

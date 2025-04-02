@@ -332,7 +332,7 @@ export const Portfolio = () => {
     };
 
     return (
-        <PortfolioContainer ref={portfolioContainerRef}>
+        <PortfolioContainer ref={portfolioContainerRef} id="Portfolio">
             <PortfolioContent>
                 <PortfolioDescriptionContainer ref={PortfolioDescriptionContainerRef}>
                     <PortfolioDescriptionTitle>

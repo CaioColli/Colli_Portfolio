@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { Presentation } from "../sections/home/presentation";
-import { AbautMe } from "../sections/home/abautMe";
+import { AboutMe } from "../sections/home/aboutMe";
 import { Portfolio } from "../sections/home/portfolio";
 import { Contact } from "../sections/home/contact";
 
@@ -25,7 +25,7 @@ export const Home = () => {
             <Presentation />
 
             <Sections>
-                <AbautMe />
+                <AboutMe />
                 <Portfolio />
                 <Contact />
             </Sections>

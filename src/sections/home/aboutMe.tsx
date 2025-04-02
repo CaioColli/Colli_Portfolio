@@ -13,6 +13,7 @@ import { useEffect, useRef } from "react";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { handleScrollTo } from "../../utils/scrollToGsap";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -201,7 +202,7 @@ const AbautCardSubTitle = styled.span`
     font-size: 14px;
 `;
 
-export const AbautMe = () => {
+export const AboutMe = () => {
     const AbautContainerRef = useRef<HTMLElement>(null);
     const AbautDescriptionRef = useRef<HTMLDivElement>(null);
     const DescriptionImageRef = useRef<HTMLDivElement>(null);
@@ -284,7 +285,7 @@ export const AbautMe = () => {
     ]
 
     return (
-        <AbautContainer ref={AbautContainerRef}>
+        <AbautContainer ref={AbautContainerRef} id="AboutMe">
             <AbautContent>
                 <AbautDescriptionContainer ref={AbautDescriptionRef}>
                     <AbautDescriptionTitle>Sobre mim</AbautDescriptionTitle>
@@ -321,7 +322,7 @@ export const AbautMe = () => {
                                 <BsEnvelopePaper />
                             </PrimaryButtonComponent>
 
-                            <SecondaryButtonComponent text="Projetos">
+                            <SecondaryButtonComponent text="Portfolio" onClick={() => handleScrollTo("Portfolio")}>
                                 <IoCodeOutline />
                             </SecondaryButtonComponent>
                         </DescriptionButtons>

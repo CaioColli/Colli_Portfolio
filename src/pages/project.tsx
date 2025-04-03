@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link } from "wouter";
 
 import { TiArrowBack } from "react-icons/ti";
 import { FaAngleRight } from "react-icons/fa6";

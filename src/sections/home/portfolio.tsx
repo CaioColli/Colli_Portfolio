@@ -7,10 +7,9 @@ import projects from '../../assets/json/projects.json';
 import certificates from '../../assets/json/certificates.json';
 import skills from '../../assets/json/skills.json';
 
-import { IoIosLink } from "react-icons/io";
-
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { CardComponent } from "../../components/card";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -121,6 +120,13 @@ const PortfolioCardsOptionsInput = styled.input`
     cursor: pointer;
 `;
 
+const PortfolioCardsContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+`;
+
 const PortfolioCardsList = styled.ul`
     display: flex;
     gap: 24px;
@@ -129,16 +135,11 @@ const PortfolioCardsList = styled.ul`
     justify-content: center;
 `;
 
-interface PortfolioCardsListItemImagemProps {
-    $skill?: boolean
-}
-
-const PortfolioCardsListItem = styled.li<PortfolioCardsListItemImagemProps>`
+const PortfolioSkillsCardsListItem = styled.li`
     all: unset;
     display: flex;
     flex: 250px;
-    flex: ${({ $skill }) => ($skill ? '250px' : 'none')};
-    max-width: 350px;
+    max-width: 300px;
     align-items: center;
     flex-direction: column;
     border-radius: 8px;
@@ -146,10 +147,10 @@ const PortfolioCardsListItem = styled.li<PortfolioCardsListItemImagemProps>`
     background-color: var(--transparentLigthGray);
 `;
 
-const PortfolioCardsListItemImagem = styled.img<PortfolioCardsListItemImagemProps>`
+const PortfolioSkillsCardsListItemImagem = styled.img`
     width: 60%;
     padding-top: 16px;
-    padding-bottom: ${({ $skill }) => ($skill ? '16px' : '0px')};
+    padding-bottom: 16px;
     transition: 0.2s ease-in;
 
     &:hover {
@@ -157,59 +158,10 @@ const PortfolioCardsListItemImagem = styled.img<PortfolioCardsListItemImagemProp
     }
 `;
 
-const PortfolioCardsListItemContent = styled.div`
-    width: 100%;
-    padding: 0 16px 16px 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-`;
-
-const PortfolioCardsListItemTextsContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-`;
-
-const PortfolioCardsListItemTitle = styled.h3`
-    color: var(--orange);
-    font-size: 20px;
-`;
-
-const PortfolioCardsListItemDescription = styled.p`
-    color: var(--white);
-    font-size: 16px;
-    font-family: 'louis';
-`;
-
-const PortfolioCardsListItemButtonsContainer = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-`;
-
-const PortfolioCardsListItemAnchor = styled.a`
+const PortfolioCardsListLink = styled(Link)`
     all: unset;
-    display: flex;
-    gap: 4px;
-    align-content: center;
-    font-size: 14px;
     cursor: pointer;
     color: var(--orange);
-    transition: 0.2s ease-in;
-
-    &:hover {
-        transform: translateY(-3px);
-    }
-`;
-
-const PortfolioCardsListItemButtonLink = styled(Link)`
-    all: unset;
-    padding: 8px 16px;
-    color: var(--orange);
-    border: 2px solid var(--orange);
-    border-radius: 8px;
-    cursor: pointer;
     transition: 0.2s ease-in;
 
     &:hover {
@@ -252,7 +204,7 @@ export const Portfolio = () => {
         };
 
         const handleResizeForCertificates = () => {
-            setCertificatesToShow(window.innerWidth <= 500 ? 5 : 10);
+            setCertificatesToShow(window.innerWidth <= 500 ? 5 : 9);
         };
 
         handleResizeForProjects();
@@ -327,10 +279,6 @@ export const Portfolio = () => {
         }
     }
 
-    const truncateText = (text: string, maxLength: number) => {
-        return text.length > maxLength ? text.slice(0, maxLength - 3) + "..." : text;
-    };
-
     return (
         <PortfolioContainer ref={portfolioContainerRef} id="Portfolio">
             <PortfolioContent>
@@ -362,86 +310,68 @@ export const Portfolio = () => {
                         ))}
                     </PortfolioCardsOptionsList>
 
-                    <PortfolioCardsList ref={portfolioCardsListRef}>
+                    <PortfolioCardsContainer>
+                        <PortfolioCardsList ref={portfolioCardsListRef}>
+                            {selectedOption === 'Projects' &&
+                                dataProjects.slice(0, projectsToShow).map((project) => (
+                                    <CardComponent
+                                        key={project.id}
+                                        id={project.id}
+                                        image={project.image}
+                                        title={project.title}
+                                        description={project.description}
+                                        demoLink={project.demoLink}
+                                        truncate={120}
+                                        isProject
+                                    />
+                                )
+                                )}
+
+                            {selectedOption === 'Certificates' &&
+                                dataCertificates.slice(0, certificatesToShow).map((certificate) => (
+                                    <CardComponent
+                                        key={certificate.id}
+                                        id={certificate.id}
+                                        image={certificate.image}
+                                        title={certificate.title}
+                                        description={certificate.description}
+                                        certificateLink={certificate.link}
+                                        truncate={100}
+                                    />
+                                ))
+                            }
+
+                            {selectedOption === 'Skills' &&
+                                dataSkills.map((skill) => (
+                                    <PortfolioSkillsCardsListItem
+                                        key={skill.id}
+                                    >
+                                        <PortfolioSkillsCardsListItemImagem
+                                            src={skill.image}
+                                            alt={skill.name}
+                                        />
+                                    </PortfolioSkillsCardsListItem>
+                                )
+                                )}
+                        </PortfolioCardsList>
+
                         {selectedOption === 'Projects' &&
-                            dataProjects.slice(0, projectsToShow).map((project) => (
-                                <PortfolioCardsListItem key={project.id}>
-                                    <PortfolioCardsListItemImagem
-                                        src={project.image}
-                                        alt={project.title}
-                                    />
-
-                                    <PortfolioCardsListItemContent>
-                                        <PortfolioCardsListItemTextsContainer>
-                                            <PortfolioCardsListItemTitle>
-                                                {project.title}
-                                            </PortfolioCardsListItemTitle>
-
-                                            <PortfolioCardsListItemDescription>
-                                                {truncateText(project.description, 120)}
-                                            </PortfolioCardsListItemDescription>
-                                        </PortfolioCardsListItemTextsContainer>
-
-                                        <PortfolioCardsListItemButtonsContainer>
-                                            {project.demoLink === null || project.demoLink === '' ? null : (
-                                                <PortfolioCardsListItemAnchor href={project.demoLink?.toString()} target="_blank">
-                                                    Demo
-                                                    <IoIosLink />
-                                                </PortfolioCardsListItemAnchor>
-                                            )}
-
-                                            <PortfolioCardsListItemButtonLink to={`/project/${project.id}`}>
-                                                Detalhes
-                                            </PortfolioCardsListItemButtonLink>
-                                        </PortfolioCardsListItemButtonsContainer>
-                                    </PortfolioCardsListItemContent>
-                                </PortfolioCardsListItem>
+                            dataProjects.length >= 6 && (
+                                <PortfolioCardsListLink href={`/portfolio/projects`}>
+                                    Ver mais projetos
+                                </PortfolioCardsListLink>
                             )
-                            )}
-
-                        {selectedOption === 'Certificates' &&
-                            dataCertificates.slice(0, certificatesToShow).map((certificate) => (
-                                <PortfolioCardsListItem key={certificate.id}>
-                                    <PortfolioCardsListItemImagem
-                                        src={certificate.image}
-                                        alt={certificate.title}
-                                    />
-
-                                    <PortfolioCardsListItemContent>
-                                        <PortfolioCardsListItemTextsContainer>
-                                            <PortfolioCardsListItemTitle>
-                                                {certificate.title}
-                                            </PortfolioCardsListItemTitle>
-
-                                            <PortfolioCardsListItemDescription>
-                                                {truncateText(certificate.description, 100)}
-                                            </PortfolioCardsListItemDescription>
-                                        </PortfolioCardsListItemTextsContainer>
-
-                                        <PortfolioCardsListItemAnchor href={certificate.link?.toString()} target="_blank">
-                                            Link
-                                            <IoIosLink />
-                                        </PortfolioCardsListItemAnchor>
-                                    </PortfolioCardsListItemContent>
-                                </PortfolioCardsListItem>
-                            ))
                         }
 
-                        {selectedOption === 'Skills' &&
-                            dataSkills.map((skill) => (
-                                <PortfolioCardsListItem
-                                    $skill={true}
-                                    key={skill.id}
-                                >
-                                    <PortfolioCardsListItemImagem
-                                        src={skill.image}
-                                        alt={skill.name}
-                                        $skill={true}
-                                    />
-                                </PortfolioCardsListItem>
+                        {selectedOption === 'Certificates' &&
+                            dataCertificates.length >= 9 && (
+                                <PortfolioCardsListLink href={`/portfolio/certificates`}>
+                                    Ver mais certificados
+                                </PortfolioCardsListLink>
                             )
-                            )}
-                    </PortfolioCardsList>
+                        }
+
+                    </PortfolioCardsContainer>
                 </PortfolioCardsContent>
 
             </PortfolioContent>

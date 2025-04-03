@@ -47,7 +47,7 @@ const ProjectDescription = styled.div`
     max-width: 600px;
 `;
 
-const ProjectDescriptionHeader = styled.div`
+const ProjectDescriptionHeader = styled.header`
     display: flex;
     align-items: center;
     gap: 24px;
@@ -214,18 +214,15 @@ const ProjectCardsContentSpan = styled.span`
 
 export const Project = ({ id }: { id: string }) => {
     const projectData = JsonData.find(item => item.id === parseInt(id));
-    console.log(projectData);
 
     return (
         <ProjectContainer>
             <ProjectContent>
                 <ProjectDescription>
                     <ProjectDescriptionHeader>
-                        <Link href="/">
-                            <PrimaryButtonComponent text="Voltar">
-                                <TiArrowBack />
-                            </PrimaryButtonComponent>
-                        </Link>
+                        <PrimaryButtonComponent text="Voltar" onClick={() => window.history.back()}>
+                            <TiArrowBack />
+                        </PrimaryButtonComponent>
 
                         <ProjectDescriptionHeaderContent>
                             <ProjectDescriptionHeaderContentSpan>

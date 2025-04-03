@@ -1,64 +1,64 @@
 [
     {
         "id": 1,
-        "image": "assets/images/certificateImages/certificateHTML.svg",
+        "image": "/assets/images/certificateImages/certificateHTML.svg",
         "title": "Formação HTML e CSS",
-        "description": "Essa formação vai desde o básico ao avançado em HTML e CSS construindo na pratica um projeto Web.",
+        "description": "Essa formação ensina HTML e CSS do básico ao avançado, criando um projeto Web na prática.",
         "link": "https://cursos.alura.com.br/user/caiocolli/degree-html-e-css-v232036-232036/certificate"
     },
     {
         "id": 2,
-        "image": "assets/images/certificateImages/certificateFrontEnd.svg",
+        "image": "/assets/images/certificateImages/certificateFrontEnd.svg",
         "title": "Formação Front-End",
-        "description": "Essa formação avança o conhecimento de HTML, CSS e JavaScript até o avançado.",
+        "description": "Essa formação aprofunda HTML, CSS e JavaScript, levando o aprendizado até o nível avançado.",
         "link": "https://cursos.alura.com.br/user/caiocolli/degree-front-end-113709/certificate"
     },
     {
         "id": 3,
-        "image": "assets/images/certificateImages/certificateReact.svg",
+        "image": "/assets/images/certificateImages/certificateReact.svg",
         "title": "Formação React",
-        "description": "Essa formação vai do básico ao avançado em React com JavaScript na pratica.",
+        "description": "Essa formação cobre React com JavaScript, indo do básico ao avançado com prática em projetos.",
         "link": "https://cursos.alura.com.br/user/caiocolli/degree-react-javascript-700230/certificate"
     },
     {
         "id": 4,
-        "image": "assets/images/certificateImages/certificateTypeScript.svg",
+        "image": "/assets/images/certificateImages/certificateTypeScript.svg",
         "title": "Formação TypeScript",
-        "description": "Essa formação aprofunda o conhecimento de JavaScript com TypeScript.",
+        "description": "Essa formação aprofunda JavaScript com TypeScript, explorando produtividade e boas práticas.",
         "link": "https://cursos.alura.com.br/user/caiocolli/degree-typescript-desenvolva-front-end-produtividade-644154/certificate"
     },
     {
         "id": 5,
-        "image": "assets/images/certificateImages/certificateNode.svg",
+        "image": "/assets/images/certificateImages/certificateNode.svg",
         "title": "Formação Node.js",
-        "description": "Essa formação vai do básico ao avançado em Node.js com JavaScript na pratica.",
+        "description": "Essa formação ensina Node.js com JavaScript, indo do básico ao avançado na construção de APIs.",
         "link": "https://cursos.alura.com.br/user/caiocolli/degree-full-stack-react-node-js-455268/certificate"
     },
     {
         "id": 6,
-        "image": "assets/images/certificateImages/certificatePHP.svg",
+        "image": "/assets/images/certificateImages/certificatePHP.svg",
         "title": "Formação PHP",
-        "description": "Essa formação vai do básico ao intermediário em PHP com orientação a objetos.",
+        "description": "Essa formação aborda PHP do básico ao intermediário, incluindo orientação a objetos na prática.",
         "link": "https://cursos.alura.com.br/user/caiocolli/degree-linguagem-php-757815/certificate"
     },
     {
         "id": 7,
-        "image": "assets/images/certificateImages/certificateSQL.svg",
+        "image": "/assets/images/certificateImages/certificateSQL.svg",
         "title": "Formação SQL",
-        "description": "Essa formação vai do básico ao avançado em SQL na pratica fazendo consultas e manipulando dados.",
+        "description": "Essa formação ensina SQL do básico ao avançado, explorando consultas e manipulação de dados.",
         "link": "https://cursos.alura.com.br/user/caiocolli/degree-conhecendo-sql-690732/certificate"
     },
     {
         "id": 8,
-        "image": "assets/images/certificateImages/certificateFigma.svg",
+        "image": "/assets/images/certificateImages/certificateFigma.svg",
         "title": "Formação Figma",
-        "description": "Essa formação de Figma vai desde o básico ao avançado na pratica construindo um projeto Web.",
+        "description": "Essa formação ensina Figma do básico ao avançado, criando projetos Web com design na prática.",
         "link": "https://cursos.alura.com.br/user/caiocolli/degree-figma-v459428-459428/certificate"
     },
     {
         "id": 9,
-        "image": "assets/images/certificateImages/certificateWordpress.svg","title": "Formação WordPress",
-        "description": "Essa formação de WordPress vai desde o básico ao avançado usando Elementor e plugins.",
+        "image": "/assets/images/certificateImages/certificateWordpress.svg","title": "Formação WordPress",
+        "description": "Essa formação ensina WordPress do básico ao avançado, explorando Elementor e plugins úteis.",
         "link": "https://cursos.alura.com.br/degree/certificate/88d6b55c-9e2f-4934-a018-f3ab197aee7f?lang"
     }
 ]

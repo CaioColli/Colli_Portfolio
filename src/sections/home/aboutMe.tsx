@@ -266,7 +266,7 @@ export const AboutMe = () => {
     const cards = [
         {
             "title": "Projetos",
-            "subTitle": "Solução web inovadora criada",
+            "subTitle": "Soluções web inovadoras criadas",
             "icon": <IoCodeOutline />,
             "quantity": 12
         },

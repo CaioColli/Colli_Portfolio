@@ -119,7 +119,7 @@ const HeaderSideMenuHeaderContentSpan = styled.span`
 
 const HeaderSideMenuHeaderContentTitle = styled.h1`
     color: var(--white);
-    font-size: 48px;
+    font-size: clamp(2rem, -0.375rem + 6vw, 3rem);
 `;
 
 const HeaderSideMenuContent = styled.div`

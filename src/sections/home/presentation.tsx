@@ -222,8 +222,8 @@ export const Presentation = () => {
                     ))}
                 </PresentationCardsList>
 
-                <PresentationButtonsContainer ref={presentationButtonsRef} onClick={() => handleScrollTo("Portfolio")}>
-                    <PrimaryButtonComponent text="Portfolio">
+                <PresentationButtonsContainer ref={presentationButtonsRef}>
+                    <PrimaryButtonComponent text="Portfolio" onClick={() => handleScrollTo("Portfolio")}>
                         <IoIosLink />
                     </PrimaryButtonComponent>
 

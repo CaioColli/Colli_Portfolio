@@ -9,6 +9,6 @@ export const handleScrollTo = (id: string) => {
             y: `#${id}`,
             offsetY: 50
         },
-        duration: 0.5
+        duration: 0
     })
 }

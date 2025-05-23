@@ -14,6 +14,7 @@ import { LuMenu } from "react-icons/lu";
 
 import { gsap } from "gsap";
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
+import { handleScrollTo } from "../../utils/scrollToGsap";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -246,18 +247,6 @@ export const Header = () => {
 
     }
 
-    const handleScrollTo = (id: string) => {
-        handleClickCloseSideMenu();
-
-        gsap.to(window, {
-            scrollTo: {
-                y: `#${id}`,
-                offsetY: 50
-            },
-            duration: 0.5
-        })
-    }
-
     const sideMenuOptions = [
         {
             id: 1,
@@ -335,7 +324,10 @@ export const Header = () => {
                     <HeaderSideMenuContent>
                         <HeaderSideMenuContentList>
                             {sideMenuOptions.map((item) => (
-                                <HeaderSideMenuContentListItem key={item.id} onClick={() => handleScrollTo(item.ref)}>
+                                <HeaderSideMenuContentListItem key={item.id} onClick={() => {
+                                    handleScrollTo(item.ref);
+                                    handleClickCloseSideMenu();
+                                }}>
                                     {item.icon}
                                     {item.name}
                                 </HeaderSideMenuContentListItem>

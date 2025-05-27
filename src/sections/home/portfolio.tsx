@@ -199,23 +199,23 @@ export const Portfolio = () => {
     const dataSkills = skills;
 
     useEffect(() => {
-        const handleResizeForProjects = () => {
-            setProjectsToShow(window.innerWidth <= 500 ? 3 : 6);
-        };
-
         const handleResizeForCertificates = () => {
             setCertificatesToShow(window.innerWidth <= 500 ? 5 : 9);
         };
 
-        handleResizeForProjects();
-        handleResizeForCertificates()
+        const handleResizeForProjects = () => {
+            setProjectsToShow(window.innerWidth <= 500 ? 3 : 6);
+        }
 
-        window.addEventListener('resize', handleResizeForProjects);
+        handleResizeForCertificates();
+        handleResizeForProjects();
+
         window.addEventListener('resize', handleResizeForCertificates);
+        window.addEventListener('resize', handleResizeForProjects);
 
         return () => {
-            window.removeEventListener('resize', handleResizeForProjects);
             window.removeEventListener('resize', handleResizeForCertificates);
+            window.removeEventListener('resize', handleResizeForProjects);
         }
     }, []);
 
@@ -355,12 +355,11 @@ export const Portfolio = () => {
                                 )}
                         </PortfolioCardsList>
 
-                        {selectedOption === 'Projects' &&
-                            dataProjects.length >= 6 && (
-                                <PortfolioCardsListLink href={`/portfolio/projects`}>
-                                    Ver mais projetos
-                                </PortfolioCardsListLink>
-                            )
+                        {selectedOption === 'Projects' && (
+                            <PortfolioCardsListLink href={`/portfolio/projects`}>
+                                Ver todos projetos
+                            </PortfolioCardsListLink>
+                        )
                         }
 
                         {selectedOption === 'Certificates' &&

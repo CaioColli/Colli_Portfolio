@@ -28,15 +28,13 @@ const PortfolioSkillsCardsListItemImagem = styled.img`
 
 interface SkillCardProps {
     data?: string;
-    key: number;
     img?: string;
     alt?: string;
 }
 
-export const SkillCard = ({ data, key, img, alt }: SkillCardProps) => {
+export const SkillCard = ({ data, img, alt }: SkillCardProps) => {
     return (
         <PortfolioSkillsCardsListItem
-            key={key}
             data-tooltip-id="skills-tooltip"
             data-tooltip-content={data}
         >

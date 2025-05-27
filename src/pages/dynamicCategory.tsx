@@ -80,17 +80,7 @@ interface Skill {
 export const DynamicCategory = ({ category }: { category: string }) => {
     const [tooltipe, setTooltipe] = useState(false);
     const contentCardsListRef = useRef<HTMLUListElement>(null);
-
-    let data = null;
-
-    if (category === "projects") {
-        data = projects as Project[];
-    } else if (category === "certificates") {
-        data = certificates as Certificate[];
-    } else {
-        data = skills as Skill[];
-    }
-
+    
     useEffect(() => {
         if (contentCardsListRef.current) {
             gsap.fromTo(contentCardsListRef.current.children, {

@@ -7,7 +7,6 @@ const AppContainer = styled.div`
     margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
-    width: 1920px;
     max-width: 100%;
 `;
 

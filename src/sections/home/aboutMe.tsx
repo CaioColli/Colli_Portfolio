@@ -19,6 +19,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const AbautContainer = styled.section`
     min-height: 100%;
+    max-width: 1920px;
     padding-top: 96px;
     width: 70%;
 

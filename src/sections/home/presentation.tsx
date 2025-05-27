@@ -13,13 +13,21 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { handleScrollTo } from "../../utils/scrollToGsap";
 
-const MainContent = styled.main`
+const Container = styled.main`
+    display: flex;
+    justify-content: center;
+    height: 100%;
+`;
+
+const MainContent = styled.div`
     display: flex;
     flex-direction: column;
     min-height: 100%;
     justify-content: center;
     position: relative;
     z-index: 1;
+    width: 100%;
+    max-width: 1920px;
 
     @media screen and (width <= 500px) {
         align-items: center;
@@ -185,54 +193,55 @@ export const Presentation = () => {
     ]
 
     return (
-        <MainContent id="Presentation">
+        <Container>
             <BackgroundVideo autoPlay loop muted>
                 <source src="assets/videos/backgroundVideo.mp4" />
             </BackgroundVideo>
 
-            <Header />
+            <MainContent id="Presentation">
+                <Header />
 
-            <PresentationContainer>
-                <PresentationCard ref={presentationCardRef}>
-                    <PresentationCardIcon />
-                    <PresentationCardTitle>
-                        Pronto para inovar!
-                    </PresentationCardTitle>
-                </PresentationCard>
+                <PresentationContainer>
+                    <PresentationCard ref={presentationCardRef}>
+                        <PresentationCardIcon />
+                        <PresentationCardTitle>
+                            Pronto para inovar!
+                        </PresentationCardTitle>
+                    </PresentationCard>
 
-                <PresentationTitleContainer ref={presentationTltlesRef}>
-                    <PresentationTitle $primary>
-                        DESENVOLVEDOR
-                    </PresentationTitle>
+                    <PresentationTitleContainer ref={presentationTltlesRef}>
+                        <PresentationTitle $primary>
+                            DESENVOLVEDOR
+                        </PresentationTitle>
 
-                    <PresentationTitle>
-                        FULL STACK
-                    </PresentationTitle>
-                </PresentationTitleContainer>
+                        <PresentationTitle>
+                            FULL STACK
+                        </PresentationTitle>
+                    </PresentationTitleContainer>
 
-                <PresentationDescription ref={presentationDescriptionRef}>
-                    Criando websites inovadores, funcionais e fáceis de usar para soluções digitais.
-                </PresentationDescription>
+                    <PresentationDescription ref={presentationDescriptionRef}>
+                        Criando websites inovadores, funcionais e fáceis de usar para soluções digitais.
+                    </PresentationDescription>
 
-                <PresentationCardsList ref={presentationCardsRef}>
-                    {technologies.map((technology, index) => (
-                        <PresentationCardItem key={index}>
-                            {technology}
-                        </PresentationCardItem>
-                    ))}
-                </PresentationCardsList>
+                    <PresentationCardsList ref={presentationCardsRef}>
+                        {technologies.map((technology, index) => (
+                            <PresentationCardItem key={index}>
+                                {technology}
+                            </PresentationCardItem>
+                        ))}
+                    </PresentationCardsList>
 
-                <PresentationButtonsContainer ref={presentationButtonsRef}>
-                    <PrimaryButtonComponent text="Portfolio" onClick={() => handleScrollTo("Portfolio")}>
-                        <IoIosLink />
-                    </PrimaryButtonComponent>
+                    <PresentationButtonsContainer ref={presentationButtonsRef}>
+                        <PrimaryButtonComponent text="Portfolio" onClick={() => handleScrollTo("Portfolio")}>
+                            <IoIosLink />
+                        </PrimaryButtonComponent>
 
-                    <SecondaryButtonComponent text="Contato" onClick={() => handleScrollTo("Contact")}>
-                        <IoMailOpenOutline />
-                    </SecondaryButtonComponent>
-                </PresentationButtonsContainer>
-            </PresentationContainer>
-
-        </MainContent>
+                        <SecondaryButtonComponent text="Contato" onClick={() => handleScrollTo("Contact")}>
+                            <IoMailOpenOutline />
+                        </SecondaryButtonComponent>
+                    </PresentationButtonsContainer>
+                </PresentationContainer>
+            </MainContent>
+        </Container>
     )
 }

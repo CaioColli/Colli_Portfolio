@@ -19,6 +19,7 @@ gsap.registerPlugin(ScrollTrigger);
 const PortfolioContainer = styled.section`
     min-height: 100vh;
     width: 70%;
+    max-width: 1920px;
 
     @media screen and (width <= 900px) {
         width: 100%;

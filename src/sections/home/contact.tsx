@@ -13,6 +13,7 @@ const ContactContainer = styled.section`
     min-height: 100%;
     width: 70%;
     padding-bottom: 96px;
+    max-width: 1920px;
 
     @media screen and (width <= 900px) {
         width: 100%;

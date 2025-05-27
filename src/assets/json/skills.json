@@ -46,12 +46,12 @@
     },
     {
         "id": 10,
-        "image": "/assets/images/skillsImages/skillCSS.svg",
+        "image": "/assets/images/skillsImages/teste.svg",
         "title": "CSS"
     },
     {
         "id": 11,
-        "image": "/assets/images/skillsImages/skillTailwind .svg",
+        "image": "/assets/images/skillsImages/skillTailwind.svg",
         "title": "Tailwind"
     }, 
     {

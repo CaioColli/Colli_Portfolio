@@ -11,6 +11,9 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CardComponent } from "../../components/card";
 
+import 'react-tooltip/dist/react-tooltip.css';
+import { SkillCard } from "../../components/skillCard";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const PortfolioContainer = styled.section`
@@ -135,29 +138,6 @@ const PortfolioCardsList = styled.ul`
     justify-content: center;
 `;
 
-const PortfolioSkillsCardsListItem = styled.li`
-    all: unset;
-    display: flex;
-    flex: 250px;
-    max-width: 300px;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 8px;
-    gap: 16px;
-    background-color: var(--transparentLigthGray);
-`;
-
-const PortfolioSkillsCardsListItemImagem = styled.img`
-    width: 60%;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    transition: 0.2s ease-in;
-
-    &:hover {
-        transform: translateY(-5px);
-    }
-`;
-
 const PortfolioCardsListLink = styled(Link)`
     all: unset;
     cursor: pointer;
@@ -171,8 +151,10 @@ const PortfolioCardsListLink = styled(Link)`
 
 export const Portfolio = () => {
     const [selectedOption, setSelectedOption] = useState('Projects');
+
     const [projectsToShow, setProjectsToShow] = useState(0);
     const [certificatesToShow, setCertificatesToShow] = useState(0);
+    const [skillsToShow, setSkillsToShow] = useState(0);
 
     const portfolioContainerRef = useRef<HTMLElement>(null);
     const PortfolioDescriptionContainerRef = useRef<HTMLDivElement>(null);
@@ -207,15 +189,22 @@ export const Portfolio = () => {
             setProjectsToShow(window.innerWidth <= 500 ? 3 : 6);
         }
 
+        const handleResizeForSkills = () => {
+            setSkillsToShow(window.innerWidth <= 500 ? 6 : 12);
+        }
+
         handleResizeForCertificates();
         handleResizeForProjects();
+        handleResizeForSkills();
 
-        window.addEventListener('resize', handleResizeForCertificates);
         window.addEventListener('resize', handleResizeForProjects);
+        window.addEventListener('resize', handleResizeForCertificates);
+        window.addEventListener('resize', handleResizeForSkills);
 
         return () => {
             window.removeEventListener('resize', handleResizeForCertificates);
             window.removeEventListener('resize', handleResizeForProjects);
+            window.removeEventListener('resize', handleResizeForSkills);
         }
     }, []);
 
@@ -342,15 +331,13 @@ export const Portfolio = () => {
                             }
 
                             {selectedOption === 'Skills' &&
-                                dataSkills.map((skill) => (
-                                    <PortfolioSkillsCardsListItem
+                                dataSkills.slice(0, skillsToShow).map((skill) => (
+                                    <SkillCard
                                         key={skill.id}
-                                    >
-                                        <PortfolioSkillsCardsListItemImagem
-                                            src={skill.image}
-                                            alt={skill.name}
-                                        />
-                                    </PortfolioSkillsCardsListItem>
+                                        img={skill.image}
+                                        alt={skill.title}
+                                        data={skill.title}
+                                    />
                                 )
                                 )}
                         </PortfolioCardsList>
@@ -366,6 +353,14 @@ export const Portfolio = () => {
                             dataCertificates.length >= 9 && (
                                 <PortfolioCardsListLink href={`/portfolio/certificates`}>
                                     Ver mais certificados
+                                </PortfolioCardsListLink>
+                            )
+                        }
+
+                        {selectedOption === 'Skills' &&
+                            dataSkills.length >= 9 && (
+                                <PortfolioCardsListLink href={`/portfolio/skills`}>
+                                    Ver todas habilidades
                                 </PortfolioCardsListLink>
                             )
                         }

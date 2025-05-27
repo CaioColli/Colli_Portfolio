@@ -1,52 +1,77 @@
 [
     {
         "id": 1,
-        "image": "assets/images/skillsImages/skillJavascript.svg",
-        "name": "JavaScript"
+        "image": "/assets/images/skillsImages/skillJavascript.svg",
+        "title": "JavaScript"
     },
     {
         "id": 2,
-        "image": "assets/images/skillsImages/skillTypescript.svg",
-        "name": "TypeScript"
+        "image": "/assets/images/skillsImages/skillTypescript.svg",
+        "title": "TypeScript"
     },
     {
         "id": 3,
-        "image": "assets/images/skillsImages/skillReact.svg",
-        "name": "React"
+        "image": "/assets/images/skillsImages/skillReact.svg",
+        "title": "React"
     },
     {
         "id": 4,
-        "image": "assets/images/skillsImages/skillNode.svg",
-        "name": "Node"
+        "image": "/assets/images/skillsImages/skillNode.svg",
+        "title": "Node"
     },
     {
         "id": 5,
-        "image": "assets/images/skillsImages/skillPHP.svg",
-        "name": "PHP"
+        "image": "/assets/images/skillsImages/skillPHP.svg",
+        "title": "PHP"
     },
     {
         "id": 6,
-        "image": "assets/images/skillsImages/skillMySQL.svg",
-        "name": "MySQL"
+        "image": "/assets/images/skillsImages/skillSlim.svg",
+        "title": "Slim Framework"
     },
     {
         "id": 7,
-        "image": "assets/images/skillsImages/skillHTML.svg",
-        "name": "HTML"
+        "image": "/assets/images/skillsImages/skillLaravel.svg",
+        "title": "Laravel"
     },
     {
         "id": 8,
-        "image": "assets/images/skillsImages/SkillCSS.svg",
-        "name": "CSS"
+        "image": "/assets/images/skillsImages/skillMySQL.svg",
+        "title": "MySQL"
     },
     {
         "id": 9,
-        "image": "assets/images/skillsImages/skillFigma.svg",
-        "name": "Figma"
+        "image": "/assets/images/skillsImages/skillHTML.svg",
+        "title": "HTML"
     },
     {
         "id": 10,
-        "image": "assets/images/skillsImages/skillWordpress.svg",
-        "name": "WordPress"
+        "image": "/assets/images/skillsImages/skillCSS.svg",
+        "title": "CSS"
+    },
+    {
+        "id": 11,
+        "image": "/assets/images/skillsImages/skillTailwind .svg",
+        "title": "Tailwind"
+    }, 
+    {
+        "id": 12,
+        "image": "/assets/images/skillsImages/skillFigma.svg",
+        "title": "Figma"
+    },
+    {
+        "id": 13,
+        "image": "/assets/images/skillsImages/skillWordpress.svg",
+        "title": "WordPress"
+    },
+    {
+        "id": 14,
+        "image": "/assets/images/skillsImages/skillGithub.svg",
+        "title": "Github"
+    },
+    {
+        "id": 15,
+        "image": "/assets/images/skillsImages/skillGit.svg",
+        "title": "Git"
     }
 ]

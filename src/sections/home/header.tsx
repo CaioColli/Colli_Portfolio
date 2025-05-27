@@ -1,16 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 
 import { CgCloseR } from "react-icons/cg";
-
 import { BiHomeAlt2 } from "react-icons/bi";
 import { TbInfoSquare } from "react-icons/tb";
 import { GoFileDirectory } from "react-icons/go";
 import { LuMail } from "react-icons/lu";
 import { IoLogoGithub } from "react-icons/io5";
+import { LuMenu } from "react-icons/lu";
 
 import styled from "styled-components";
-
-import { LuMenu } from "react-icons/lu";
 
 import { gsap } from "gsap";
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
@@ -88,6 +86,7 @@ const HeaderSideMenu = styled.div`
     height: 100dvh;
     width: 100%;
     position: absolute;
+    opacity: 0;
     top: 0;
 `;
 
@@ -180,11 +179,8 @@ export const Header = () => {
 
     useEffect(() => {
         if (openSideMenu && clickedOutSide) {
-            setTimeout(() => {
-                handleClickCloseSideMenu();
-            }, 0.1)
+            handleClickCloseSideMenu();
             setClickedOutSide(false);
-
         }
     }, [clickedOutSide, openSideMenu]);
 

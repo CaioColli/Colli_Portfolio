@@ -191,6 +191,7 @@ const ProjectCardsContentCardList = styled.ul`
 
 const ProjectCardsContentCardListIcons = styled(CiStar)`
     color: var(--orange);
+    min-width: 24px;
     font-size: 24px;
 `;
 

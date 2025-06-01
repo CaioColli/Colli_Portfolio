@@ -82,16 +82,17 @@
         "image": "/assets/images/projectImages/projectOhana.png",
         "description": "Ohana Travel é um projeto para reservas de hospedagens, guia turisticos e aluguel de veiculos, no Havaí",
         "demoLink": null,
-        "fullDescription": "Ohana Travel é uma plataforma desenvolvida para reservas de hospedagem, guias turísticos e aluguel de veículos no Havaí. O projeto foi implementado com PHP Laravel no back-end, utilizando Respect/Validation para validações e MySQL como banco de dados. O front-end foi criado com React.ts, utilizando bibliotecas como Wouter, React Query e Styled Components para uma experiência interativa e estilizada./n/nNa plataforma, os usuários podem navegar pelas diversas ofertas, pesquisar tipos de acomodação, como hotéis, resorts e bangalôs, e explorar opções de turismo no Havaí. A barra de pesquisa permite que o usuário encontre o que procura, seja uma reserva de hotel, passeio turístico ou modelo de veículo para aluguel./n/nA plataforma oferece três tipos de usuários: Administrador, Locatário e Usuário Comum. O Administrador é responsável por gerenciar o site, decidir quais ofertas serão destacadas na página principal, adicionar ou deletar serviços, e aprovar ou negar novos serviços solicitados pelos locatários. O Locatário pode enviar pedidos de novos serviços para serem adicionados à plataforma. O Usuário Comum pode fazer reservas de hospedagem, contratar guias turísticos ou alugar veículos./n/nAlém disso, a cada pedido finalizado, o locador (seja de hospedagem, guia turístico ou aluguel de veículos) recebe uma porcentagem do valor da transação.",
+        "fullDescription": "Ohana Travel é uma plataforma fictícia desenvolvida para reservas de hospedagem, hotéis, apartamentos, passagens aéreas e um clube de benefícios. O projeto foi implementado com PHP e Slim Framework no back-end, utilizando Respect/Validation para validações e MySQL como banco de dados. O front-end foi criado com React e TypeScript, utilizando bibliotecas como Wouter, React Query e Tailwind CSS para proporcionar uma experiência interativa e bem estilizada. Na plataforma, os usuários podem explorar diversas ofertas, pesquisar tipos de acomodação — como hotéis, resorts e cabanas — e conferir opções de turismo no Havaí. A barra de pesquisa permite que encontrem facilmente o que procuram, seja uma reserva de hotel, passeio turístico ou modelo de veículo para aluguel. A plataforma conta com dois tipos de usuários: Administrador e Usuário Comum. O Administrador é responsável por gerenciar o site, adicionando ou removendo serviços, além de aprovar ou recusar novas solicitações enviadas pelos usuários. Já o Usuário pode explorar os serviços disponíveis e enviar pedidos de novos serviços para serem avaliados.",
         "backendGitHubLink": null,
         "frontendGitHubLink": null,
         "figmaLink": "https://www.figma.com/design/Pl793koUFM6ZZMhgoErfho/OhanaTravel?m=auto&t=ikvcFPEEEColSRW2-6",
         "technologies": [
             "PHP",
-            "Laravel",
+            "SlimFramework",
             "MySQL",
-            "React.ts",
-            "Styled Components",
+            "React",
+            "Typescript",
+            "Tailwind CSS",
             "Wouter",
             "React Query"
         ],
@@ -99,11 +100,11 @@
         "features": [
             "Pesquisa dinâmica",
             "Filtros avançados",
-            "Reservas de hospedagem, guias turísticos e aluguel de veículos",
+            "Reservas de hospedagem e aluguel de veículos",
             "Inserção de novos serviços",
             "Painel para administradores",
-            "Painel para locatários",
-            "Painel para usuários comuns"
+            "Painel para usuários",
+            "Painel para adição de serviços"
         ]
     },
     {

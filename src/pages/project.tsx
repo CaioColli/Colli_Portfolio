@@ -87,6 +87,7 @@ const ProjectDescriptionContentHeader = styled.div`
 const ProjectDescriptionContentHeaderTitle = styled.h1`
     color: var(--white);
     font-size: 48px;
+    margin: 0;
 `;
 
 const ProjectDescriptionContentHeaderLineSpan = styled.span`

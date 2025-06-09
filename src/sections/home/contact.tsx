@@ -39,6 +39,7 @@ const ContactDescriptionContainer = styled.div`
 const ContactDescriptionTitle = styled.h1`
     color: var(--orange);
     font-size: 48px;
+    margin: 0;
 
     @media screen and (width <= 500px) {
         font-size: 40px;
@@ -164,7 +165,7 @@ export const Contact = () => {
             <ContactContent ref={ContactContentRef}>
                 <ContactDescriptionContainer>
                     <ContactDescriptionTitle>
-                        Contacte-me
+                        Contate-me
                     </ContactDescriptionTitle>
 
                     <ContactDescriptionSpan>

@@ -46,6 +46,7 @@ const AbautDescriptionContainer = styled.div`
 const AbautDescriptionTitle = styled.h1`
     color: var(--orange);
     font-size: 48px;
+    margin: 0;
 
     @media screen and (width <= 500px) {
         font-size: 40px;

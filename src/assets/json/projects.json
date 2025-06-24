@@ -109,6 +109,33 @@
     },
     {
         "id": 5,
+        "title": "Barberly",
+        "image": "/assets/images/projectImages/projectBarberly.png",
+        "description": "Barberly é um projeto feito em Laravel para agendamento de horários para uma barbearia.",
+        "demoLink": null,
+        "fullDescription": "Barberly é um sistema completo para agendamento de horários em barbearias, desenvolvido em Laravel. O projeto oferece uma solução robusta e intuitiva, contemplando todas as funcionalidades necessárias para a gestão do negócio. O painel administrativo permite criar e editar serviços oferecidos, além de visualizar os agendamentos em tempo real. Na área do cliente, é possível agendar serviços, assinar planos mensais, avaliar atendimentos, acessar a localização da barbearia e consultar o histórico de serviços realizados. Todo o sistema foi desenvolvido com Laravel e Inertia.js integrado ao React com TypeScript, proporcionando uma experiência de uso dinâmica, performática e responsiva. A estilização é feita com Tailwind CSS e o armazenamento de dados é gerenciado por um banco de dados MySQL.",
+        "backendGitHubLink": "https://github.com/CaioColli/Barberly",
+        "frontendGitHubLink": null,
+        "figmaLink": "https://www.figma.com/design/oOIteb5WQoMIZcBwdxf7f9/Barberly?node-id=0-1&p=f&t=bnAwGKiV0OdmpwuN-0",
+        "technologies": [
+            "PHP",
+            "Laravel",
+            "Inertia.js",
+            "React",
+            "Typescript",
+            "Tailwind CSS"
+        ],
+        "inProduction": true,
+        "features": [
+            "Autenticação de usuários",
+            "Painel administrativo",
+            "Agenda de horários",
+            "Sistema de avaliação",
+            "Log de usuário"
+        ]
+    },
+    {
+        "id": 6,
         "title": "Anime World",
         "image": "/assets/images/projectImages/projectAnime.png",
         "description": "AnimeWorld foi um desafio de 10 dias para consumir uma API e desenvolver uma plataforma de animes.",
@@ -129,6 +156,30 @@
             "Design 100% responsivo",
             "Tratamento de erros robusto",
             "Consumo de API"
+        ]
+    },
+    {
+        "id": 7,
+        "title": "User Manager",
+        "image": "/assets/images/projectImages/projectUserManager.png",
+        "description": "User Manager foi um projeto de CRUD para gerenciamento robusto de usuários.",
+        "demoLink": null,
+        "fullDescription": "User Manager é um sistema de autenticação completo feito em PHP com Slim Framework. Ele usa Respect/Validation para validar as entradas de dados e conta com recursos como envio de e-mails para redefinição de senha e confirmação de e-mail, autenticação via JWT e criptografia ponta a ponta pra garantir mais segurança nos dados. Além disso, o sistema tem um CRUD completo para gerenciamento de usuário",
+        "backendGitHubLink": "https://github.com/CaioColli/User_Manager",
+        "frontendGitHubLink": null,
+        "figmaLink": null,
+        "technologies": [
+            "PHP",
+            "SlimFramework",
+            "MySQL"
+        ],
+        "inProduction": false,
+        "features": [
+            "Cadastro, Login, Edição e Exclusão de usuários",
+            "Reset de senha",
+            "Confirmação de e-mail",
+            "Disparo de e-mail",
+            "Autenticação de JWT"
         ]
     }
 ]

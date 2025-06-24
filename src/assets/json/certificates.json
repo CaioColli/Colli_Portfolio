@@ -57,8 +57,23 @@
     },
     {
         "id": 9,
-        "image": "/assets/images/certificateImages/certificateWordpress.svg","title": "Formação WordPress",
+        "image": "/assets/images/certificateImages/certificateWordpress.svg",
+        "title": "Formação WordPress",
         "description": "Essa formação ensina WordPress do básico ao avançado, explorando Elementor e plugins úteis.",
+        "link": "https://cursos.alura.com.br/degree/certificate/88d6b55c-9e2f-4934-a018-f3ab197aee7f?lang"
+    },
+    {
+        "id": 10,
+        "image": "/assets/images/certificateImages/certificateLaravel.svg",
+        "title": "Formação Laravel",
+        "description": "Essa formação ensina Laravel do básico ao avançado utilizando com as melhores soluções do Framework.",
+        "link": "https://cursos.alura.com.br/degree/certificate/88d6b55c-9e2f-4934-a018-f3ab197aee7f?lang"
+    },
+    {
+        "id": 11,
+        "image": "/assets/images/certificateImages/certificateTailwind.svg",
+        "title": "Curso Tailwind CSS",
+        "description": "Esse curso ensina Tailwind CSS do básico ao avançado, criando projetos Web com design na prática.",
         "link": "https://cursos.alura.com.br/degree/certificate/88d6b55c-9e2f-4934-a018-f3ab197aee7f?lang"
     }
 ]

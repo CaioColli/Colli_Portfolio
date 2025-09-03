@@ -284,7 +284,7 @@ export const Header = () => {
         {
             id: 3,
             ref: "Portfolio",
-            name: "Projetos",
+            name: "Portfolio",
         },
         {
             id: 4,

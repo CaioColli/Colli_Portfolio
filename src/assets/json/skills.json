@@ -41,36 +41,41 @@
     },
     {
         "id": 9,
+        "image": "/assets/images/skillsImages/skillPostgreSQL.svg",
+        "title": "PostgreSQL"
+    },
+    {
+        "id": 10,
         "image": "/assets/images/skillsImages/skillHTML.svg",
         "title": "HTML"
     },
     {
-        "id": 10,
+        "id": 11,
         "image": "/assets/images/skillsImages/teste.svg",
         "title": "CSS"
     },
     {
-        "id": 11,
+        "id": 12,
         "image": "/assets/images/skillsImages/skillTailwind.svg",
         "title": "Tailwind"
     }, 
     {
-        "id": 12,
+        "id": 13,
         "image": "/assets/images/skillsImages/skillFigma.svg",
         "title": "Figma"
     },
     {
-        "id": 13,
+        "id": 14,
         "image": "/assets/images/skillsImages/skillWordpress.svg",
         "title": "WordPress"
     },
     {
-        "id": 14,
+        "id": 15,
         "image": "/assets/images/skillsImages/skillGithub.svg",
         "title": "Github"
     },
     {
-        "id": 15,
+        "id": 16,
         "image": "/assets/images/skillsImages/skillGit.svg",
         "title": "Git"
     }

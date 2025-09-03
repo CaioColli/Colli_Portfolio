@@ -190,7 +190,7 @@ export const Presentation = () => {
     }, [])
 
     const technologies = [
-        'React', 'JavaScript', 'Typescript', 'PHP', 'Node.js', 'Figma'
+        'React', 'JavaScript', 'Typescript', 'PHP', 'Laravel', 'Node.js', 'Figma'
     ]
 
     return (

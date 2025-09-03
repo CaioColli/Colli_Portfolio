@@ -316,7 +316,7 @@ export const AboutMe = () => {
                         </DescriptionTitleContainer>
 
                         <DescriptionParagraph>
-                            desenvolvedor FullStack com experiência e conhecimento em desenvolvimento web em linguagens como React, JavaScript, TypeScript, HTML, CSS, PHP, Node.js e MySQL.
+                            desenvolvedor FullStack com experiência e conhecimento em desenvolvimento web em linguagens como React, JavaScript, TypeScript, Tailwind CSS, PHP, Laravel, Node.js, MySQL e PostgreSQL.
                         </DescriptionParagraph>
 
                         <DescriptionButtons>

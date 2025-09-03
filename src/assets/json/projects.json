@@ -69,7 +69,7 @@
             "Css",
             "React Router DOM"
         ],
-        "inProduction": true,
+        "inProduction": false,
         "features": [
             "Cardápio online",
             "Finalização de pedido via WhatsApp",
@@ -149,7 +149,7 @@
             "CSS",
             "JavaScript"
         ],
-        "inProduction": true,
+        "inProduction": false,
         "features": [
             "Pesquisa dinâmica",
             "Filtros avançados",
@@ -180,6 +180,30 @@
             "Confirmação de e-mail",
             "Disparo de e-mail",
             "Autenticação de JWT"
+        ]
+    },
+    {
+        "id": 8,
+        "title": "Fallout Burguer API",
+        "image": "/assets/images/projectImages/projectUserManager.png",
+        "description": "Fallout Burguer API foi um projeto de plataforma integrada para hamburguerias, com gestão de produtos, estoque e pagamentos online.",
+        "demoLink": null,
+        "fullDescription": "Plataforma integrada para hamburguerias com login seguro, gerenciamento de produtos e estoque, pagamentos online via Mercado Pago e comunicação automatizada por e-mail e SMS, proporcionando eficiência e melhor experiência ao cliente.",
+        "backendGitHubLink": "https://github.com/CaioColli/FalloutBurguerAPI",
+        "frontendGitHubLink": null,
+        "figmaLink": null,
+        "technologies": [
+            "PHP",
+            "Laravel",
+            "PostgreSQL"
+        ],
+        "inProduction": true,
+        "features": [
+            "Login seguro",
+            "Gerenciamento de produtos e estoque",
+            "Pagamentos online",
+            "Comunicação automatizada",
+            "Plataforma integrada"
         ]
     }
 ]
